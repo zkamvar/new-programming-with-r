@@ -38,11 +38,11 @@ analyze <- function(filename) {
   # Input is character string of a csv file.
   dat <- read.csv(file = filename, header = FALSE)
   avg_day_inflammation <- apply(dat, 2, mean)
-  plot(avg_day_inflammation)
+  plot(avg_day_inflammation, col = "red")
   max_day_inflammation <- apply(dat, 2, max)
-  plot(max_day_inflammation)
+  plot(max_day_inflammation, col = "blue")
   min_day_inflammation <- apply(dat, 2, min)
-  plot(min_day_inflammation)
+  plot(min_day_inflammation, col = "forestgreen")
 }
 
 analyze("data/inflammation-01.csv")
