@@ -21,6 +21,9 @@ jobs:
         with:
           pandoc-version: "2.10"
 
+      - name: Install Mac Deps
+        run: brew install libgit2
+
       - name: Cache R packages
         uses: actions/cache@v2
         with:
