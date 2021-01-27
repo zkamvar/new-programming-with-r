@@ -62,4 +62,27 @@ fs::dir_copy(fs::path(src, "_episodes_rmd/data/", "episodes/"))
 rscripts <- fs::dir_ls(fs::path(src, "r-novice-gapminder/_episodes_rmd/"), glob = "*.R") 
 fs::file_copy(rscripts, "episodes/", overwrite = TRUE)
 fs::file_delete("episodes/01-introduction.Rmd")
+fs::file_delete("learners/Setup.md")
 ```
+
+After this was done, I added the `.github/` configuration files from https://github.com/zkamvar/testme. I then ran `sandpaper::build_lesson()` to test that it worked (there's something going on with the formatting, but nothing need be changed on this end). 
+
+I then used the following steps to update the config file
+
+
+```r
+library("sandpaper")
+# set the order of the learner files
+learn <- get_learners()
+set_learners(order = learn, write = TRUE)
+
+# set the order of the episode files
+ep <- get_episodes()
+set_episodes(order = ep, write = TRUE)
+```
+
+I ran into [a bug with {sandpaper}](https://github.com/carpentries/sandpaper/issues/53) that will be fixed soon, but it luckily does not affect the results.
+
+I committed all the bits and pushed the results to github where everything was able to install (after I made sure the dependencies were taken care of). 
+
+At this moment, I am finishing up the notes for the migration and setting up the configuration file.
