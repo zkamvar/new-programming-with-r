@@ -8,34 +8,34 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta http-equiv="last-modified" content="2021-01-27 03:29:14 +0000">
+<meta http-equiv="last-modified" content="2021-01-27 03:47:15 +0000">
 
 
 
-<title>Lesson Title: Migrating from Jekyll to {sandpaper}</title>
+<title>Programming With R: Migrating from Jekyll to {sandpaper}</title>
 
-<link rel="apple-touch-icon-precomposed" sizes="57x57" href="favicons/cp/apple-touch-icon-57x57.png" />
-<link rel="apple-touch-icon-precomposed" sizes="114x114" href="favicons/cp/apple-touch-icon-114x114.png" />
-<link rel="apple-touch-icon-precomposed" sizes="72x72" href="favicons/cp/apple-touch-icon-72x72.png" />
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="favicons/cp/apple-touch-icon-144x144.png" />
-<link rel="apple-touch-icon-precomposed" sizes="60x60" href="favicons/cp/apple-touch-icon-60x60.png" />
-<link rel="apple-touch-icon-precomposed" sizes="120x120" href="favicons/cp/apple-touch-icon-120x120.png" />
-<link rel="apple-touch-icon-precomposed" sizes="76x76" href="favicons/cp/apple-touch-icon-76x76.png" />
-<link rel="apple-touch-icon-precomposed" sizes="152x152" href="favicons/cp/apple-touch-icon-152x152.png" />
-<link rel="icon" type="image/png" href="favicons/cp/favicon-196x196.png" sizes="196x196" />
-<link rel="icon" type="image/png" href="favicons/cp/favicon-96x96.png" sizes="96x96" />
-<link rel="icon" type="image/png" href="favicons/cp/favicon-32x32.png" sizes="32x32" />
-<link rel="icon" type="image/png" href="favicons/cp/favicon-16x16.png" sizes="16x16" />
-<link rel="icon" type="image/png" href="favicons/cp/favicon-128.png" sizes="128x128" />
+<link rel="apple-touch-icon-precomposed" sizes="57x57" href="favicons/swc/apple-touch-icon-57x57.png" />
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="favicons/swc/apple-touch-icon-114x114.png" />
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="favicons/swc/apple-touch-icon-72x72.png" />
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="favicons/swc/apple-touch-icon-144x144.png" />
+<link rel="apple-touch-icon-precomposed" sizes="60x60" href="favicons/swc/apple-touch-icon-60x60.png" />
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="favicons/swc/apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon-precomposed" sizes="76x76" href="favicons/swc/apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="favicons/swc/apple-touch-icon-152x152.png" />
+<link rel="icon" type="image/png" href="favicons/swc/favicon-196x196.png" sizes="196x196" />
+<link rel="icon" type="image/png" href="favicons/swc/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/png" href="favicons/swc/favicon-32x32.png" sizes="32x32" />
+<link rel="icon" type="image/png" href="favicons/swc/favicon-16x16.png" sizes="16x16" />
+<link rel="icon" type="image/png" href="favicons/swc/favicon-128.png" sizes="128x128" />
 
-<meta name="application-name" content="The Carpentries - Lesson Title"/>
+<meta name="application-name" content="Software Carpentry - Programming With R"/>
 
 <meta name="msapplication-TileColor" content="#FFFFFF" />
-<meta name="msapplication-TileImage" content="favicons/cp/mstile-144x144.png" />
-<meta name="msapplication-square70x70logo" content="favicons/cp/mstile-70x70.png" />
-<meta name="msapplication-square150x150logo" content="favicons/cp/mstile-150x150.png" />
-<meta name="msapplication-wide310x150logo" content="favicons/cp/mstile-310x150.png" />
-<meta name="msapplication-square310x310logo" content="favicons/cp/mstile-310x310.png" />
+<meta name="msapplication-TileImage" content="favicons/swc/mstile-144x144.png" />
+<meta name="msapplication-square70x70logo" content="favicons/swc/mstile-70x70.png" />
+<meta name="msapplication-square150x150logo" content="favicons/swc/mstile-150x150.png" />
+<meta name="msapplication-wide310x150logo" content="favicons/swc/mstile-310x150.png" />
+<meta name="msapplication-square310x310logo" content="favicons/swc/mstile-310x310.png" />
 
 
 
@@ -109,8 +109,8 @@
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">Home</a>
         <!-- TODO: the logo is not centered in the nav bar and looks ugly... also there needs to be a better way of choosing the logo... probably on the R side.-->
-        <a href="https://carpentries.org" class="pull-left">
-          <img class="navbar-logo" src="img/cp-icon-blue.svg" alt="The Carpentries logo" />
+        <a href="https://software-carpentry.org" class="pull-left">
+          <img class="navbar-logo" src="img/swc-icon-blue.svg" alt="Software Carpentry logo" />
         </a>
       </span>
     </div>
@@ -219,9 +219,9 @@
 
 
     <div class="panel panel-default life-cycle">
-      <div id="life-cycle" class="panel-body pre-alpha">
-         This lesson is still being designed and assembled (Pre-Alpha version) 
+      <div id="life-cycle" class="panel-body alpha">
         
+         This lesson is in the early stages of development (Alpha version) 
         
       </div>
     </div>
@@ -289,7 +289,21 @@
 <span id="cb2-39"><a href="#cb2-39" aria-hidden="true"></a>fs<span class="op">::</span><span class="kw">dir_copy</span>(fs<span class="op">::</span><span class="kw">path</span>(src, <span class="st">&quot;_episodes_rmd/data/&quot;</span>, <span class="st">&quot;episodes/&quot;</span>))</span>
 <span id="cb2-40"><a href="#cb2-40" aria-hidden="true"></a>rscripts &lt;-<span class="st"> </span>fs<span class="op">::</span><span class="kw">dir_ls</span>(fs<span class="op">::</span><span class="kw">path</span>(src, <span class="st">&quot;r-novice-gapminder/_episodes_rmd/&quot;</span>), <span class="dt">glob =</span> <span class="st">&quot;*.R&quot;</span>) </span>
 <span id="cb2-41"><a href="#cb2-41" aria-hidden="true"></a>fs<span class="op">::</span><span class="kw">file_copy</span>(rscripts, <span class="st">&quot;episodes/&quot;</span>, <span class="dt">overwrite =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb2-42"><a href="#cb2-42" aria-hidden="true"></a>fs<span class="op">::</span><span class="kw">file_delete</span>(<span class="st">&quot;episodes/01-introduction.Rmd&quot;</span>)</span></code></pre></div>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true"></a>fs<span class="op">::</span><span class="kw">file_delete</span>(<span class="st">&quot;episodes/01-introduction.Rmd&quot;</span>)</span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true"></a>fs<span class="op">::</span><span class="kw">file_delete</span>(<span class="st">&quot;learners/Setup.md&quot;</span>)</span></code></pre></div>
+<p>After this was done, I added the <code>.github/</code> configuration files from https://github.com/zkamvar/testme. I then ran <code>sandpaper::build_lesson()</code> to test that it worked (there’s something going on with the formatting, but nothing need be changed on this end).</p>
+<p>I then used the following steps to update the config file</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="kw">library</span>(<span class="st">&quot;sandpaper&quot;</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a><span class="co"># set the order of the learner files</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a>learn &lt;-<span class="st"> </span><span class="kw">get_learners</span>()</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true"></a><span class="kw">set_learners</span>(<span class="dt">order =</span> learn, <span class="dt">write =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true"></a><span class="co"># set the order of the episode files</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true"></a>ep &lt;-<span class="st"> </span><span class="kw">get_episodes</span>()</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true"></a><span class="kw">set_episodes</span>(<span class="dt">order =</span> ep, <span class="dt">write =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
+<p>I ran into <a href="https://github.com/carpentries/sandpaper/issues/53">a bug with {sandpaper}</a> that will be fixed soon, but it luckily does not affect the results.</p>
+<p>I committed all the bits and pushed the results to github where everything was able to install (after I made sure the dependencies were taken care of).</p>
+<p>At this moment, I am finishing up the notes for the migration and setting up the configuration file.</p>
 
   </div>
 
@@ -315,7 +329,7 @@
       </h3>
     </div>
     <div class="col-xs-10">
-      <h3 class="maintitle"><a href="index.html">Lesson Title</a></h3>
+      <h3 class="maintitle"><a href="index.html">Programming With R</a></h3>
     </div>
     <div class="col-xs-1">
       <h3 class="text-right">
@@ -332,15 +346,15 @@
       by <a href="https://softwarecarpentry.org">Software Carpentry Foundation</a>
     </div>
     <div class="col-md-6 help-links pull-right" align="right">
-      <a href="https://github.com/carpentries/sandpaper/edit/main/instructors/migration-notes.md" data-checker-ignore>Edit on GitHub</a>
+      <a href="https://github.com/zkamvar/new-programming-with-r/edit/main/instructors/migration-notes.md" data-checker-ignore>Edit on GitHub</a>
       /
-      <a href="https://github.com/carpentries/sandpaper/blob/main/CONTRIBUTING.md" data-checker-ignore>Contributing</a>
+      <a href="https://github.com/zkamvar/new-programming-with-r/blob/main/CONTRIBUTING.md" data-checker-ignore>Contributing</a>
       /
-      <a href="https://github.com/carpentries/sandpaper/">Source</a>
+      <a href="https://github.com/zkamvar/new-programming-with-r/">Source</a>
       /
-      <a href="https://github.com/carpentries/sandpaper/blob/main/CITATION" data-checker-ignore>Cite</a>
+      <a href="https://github.com/zkamvar/new-programming-with-r/blob/main/CITATION" data-checker-ignore>Cite</a>
       /
-      <a href="mailto:team@carpentries.org">Contact</a>
+      <a href="mailto:zkamvar@carpentries.org">Contact</a>
     </div>
   </div>
   <div class="row">
