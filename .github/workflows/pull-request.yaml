@@ -30,6 +30,9 @@ jobs:
         with:
           pandoc-version: "2.10"
 
+      - name: setup libgit2
+        run: brew install libgit2
+
       - name: Cache R packages
         uses: actions/cache@v2
         with:
