@@ -1,5 +1,5 @@
 ---
-sandpaper-digest: 7e4f1e1d13acceedf8c0532e5e6766a9
+sandpaper-digest: ff9aa73f5967bd7332471dbf82b552ad
 sandpaper-source: /Users/runner/work/new-programming-with-r/new-programming-with-r/episodes/03-loops-R.Rmd
 
 title: Analyzing Multiple Data Sets
@@ -41,11 +41,11 @@ analyze <- function(filename) {
   # Input is character string of a csv file.
   dat <- read.csv(file = filename, header = FALSE)
   avg_day_inflammation <- apply(dat, 2, mean)
-  plot(avg_day_inflammation)
+  plot(avg_day_inflammation, col = "red")
   max_day_inflammation <- apply(dat, 2, max)
-  plot(max_day_inflammation)
+  plot(max_day_inflammation, col = "blue")
   min_day_inflammation <- apply(dat, 2, min)
-  plot(min_day_inflammation)
+  plot(min_day_inflammation, col = "forestgreen")
 }
 
 analyze("data/inflammation-01.csv")
