@@ -8,7 +8,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta http-equiv="last-modified" content="2021-01-27 03:47:15 +0000">
+<meta http-equiv="last-modified" content="2021-01-30 02:41:52 +0000">
 
 
 
@@ -238,46 +238,37 @@
       <h1>Command-Line Programs</h1>
     </div>
 
-<div class="objectives">
-<div class="section level2">
+<div class="section level2 objectives">
 <h2>Overview</h2>
-  <div class="row">
-    <div class="col-md-3">
-  
+<div class="row">
+<div class="col-md-3">
 <p><strong>Teaching: </strong> 30<br />
 <strong>Exercises: </strong> 0</p>
-    </div>
-    <div class="col-md-9">
-  
-<p><strong>Questions</strong></p>
 </div>
+<div class="col-md-9">
+<p><strong>Questions</strong></p>
 <div id="questions" class="section level2">
 <h2>Questions</h2>
 <ul>
 <li>How do I write a command-line script?</li>
 <li>How do I read in arguments from the command-line?</li>
 </ul>
-    </div>
-  </div>
-  
-  <div class="row">
-    <div class="col-md-3">
-  
-    </div>
-    <div class="col-md-9">
-  
-<p><strong>Objectives</strong></p>
 </div>
-<div id="objectives" class="section level2">
-<h2>Objectives</h2>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3">
+
+</div>
+<div class="col-md-9">
+<p><strong>Objectives</strong></p>
 <ul>
 <li>Use the values of command-line arguments in a program.</li>
 <li>Handle flags and files separately in a command-line program.</li>
 <li>Read data from standard input in a program so that it can be used in a pipeline.</li>
 </ul>
-    </div>
-  </div>
-  
+</div>
+</div>
 </div>
 <p>The R Console and other interactive tools like RStudio are great for prototyping code and exploring data, but sooner or later we will want to use our program in a pipeline or run it in a shell script to process thousands of data files. In order to do that, we need to make our programs work like other Unix command-line tools. For example, we may want a program that reads a data set and prints the average inflammation per patient:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a>$ <span class="ex">Rscript</span> readings.R --mean data/inflammation-01.csv</span>
@@ -299,8 +290,8 @@
 <li>Use the <code>--min</code>, <code>--mean</code>, or <code>--max</code> flag to determine what statistic to print.</li>
 </ol>
 <p>To make this work, we need to know how to handle command-line arguments in a program, and how to get at standard input. We’ll tackle these questions in turn below.</p>
-<div id="command-line-arguments" class="section level3">
-<h3>Command-Line Arguments</h3>
+<div id="command-line-arguments" class="section level1">
+<h1>Command-Line Arguments</h1>
 <p>Using the text editor of your choice, save the following line of code in a text file called <code>session-info.R</code>:</p>
 <pre class="output"><code>sessionInfo()</code></pre>
 <p>The function, <code>sessionInfo</code>, outputs the version of R you are running as well as the type of computer you are using (as well as the versions of the packages that have been loaded). This is very useful information to include when asking others for help with your R code.</p>
@@ -323,11 +314,10 @@ attached base packages:
 loaded via a namespace (and not attached):
 [1] compiler_4.0.3</code></pre>
 <aside class="callout">
-</div>
-</div>
-<div id="the-right-directory" class="section level2">
-<h2>The Right Directory</h2>
+<div id="the-right-directory" class="section level3">
+<h3>The Right Directory</h3>
 <p>If that did not work, you might have seen an error message indicating that the file <code>session-info.R</code> does not exist. Remember that you must be in the correct directory, the one in which you created your script file. You can determine which directory you are currently in using <code>pwd</code> and change to a different directory using <code>cd</code>. For a review, see this <a href="https://swcarpentry.github.io/shell-novice/02-filedir/">lesson</a>.</p>
+</div>
 </aside>
 <p>Now let’s create another script that does something more interesting. Write the following lines in a file named <code>print-args.R</code>:</p>
 <pre class="output"><code>args &lt;- commandArgs()
@@ -452,7 +442,6 @@ main()</code></pre>
 6.4
 7.05
 5.9</code></pre>
-</div>
 <div class="challenge">
 <div id="a-simple-command-line-program" class="section level2">
 <h2>A Simple Command-Line Program</h2>
@@ -530,8 +519,9 @@ print-args.R</code></pre>
 main()</code></pre>
 </div>
 </div>
-<div id="handling-multiple-files" class="section level3">
-<h3>Handling Multiple Files</h3>
+</div>
+<div id="handling-multiple-files" class="section level1">
+<h1>Handling Multiple Files</h1>
 <p>The next step is to teach our program how to handle multiple files. Since 60 lines of output per file is a lot to page through, we’ll start by using three smaller files, each of which has three days of data for two patients. Let’s investigate them from the Unix Shell:</p>
 <div class="sourceCode" id="cb32"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true"></a><span class="fu">ls</span> data/small-*.csv</span></code></pre></div>
 <pre class="output"><code>data/small-01.csv
@@ -563,7 +553,6 @@ main()</code></pre>
 13.66667
 11</code></pre>
 <p><strong>Note</strong>: at this point, we have created three versions of our script called <code>readings-01.R</code>, <code>readings-02.R</code>, and <code>readings-03.R</code>. We wouldn’t do this in real life: instead, we would have one file called <code>readings.R</code> that we committed to version control every time we got an enhancement working. For teaching, though, we need all the successive versions side by side.</p>
-</div>
 <div class="challenge">
 <div id="a-command-line-program-with-arguments" class="section level2">
 <h2>A Command Line Program with Arguments</h2>
@@ -599,8 +588,9 @@ main()</code></pre>
 main()</code></pre>
 </div>
 </div>
-<div id="handling-command-line-flags" class="section level3">
-<h3>Handling Command-Line Flags</h3>
+</div>
+<div id="handling-command-line-flags" class="section level1">
+<h1>Handling Command-Line Flags</h1>
 <p>The next step is to teach our program to pay attention to the <code>--min</code>, <code>--mean</code>, and <code>--max</code> flags. These always appear before the names of the files, so let’s save the following in <code>readings-04.R</code>:</p>
 <pre class="output"><code>main &lt;- function() {
   args &lt;- commandArgs(trailingOnly = TRUE)
@@ -659,12 +649,11 @@ process &lt;- function(filename, action) {
 main()</code></pre>
 <p>This is four lines longer than its predecessor, but broken into more digestible chunks of 8 and 12 lines.</p>
 <aside class="callout">
-</div>
-<div id="parsing-command-line-flags" class="section level2">
-<h2>Parsing Command-Line Flags</h2>
+<div id="parsing-command-line-flags" class="section level3">
+<h3>Parsing Command-Line Flags</h3>
 <p>R has a package named <a href="https://cran.r-project.org/package=argparse">argparse</a> that helps handle complex command-line flags (it utilizes a <a href="https://docs.python.org/dev/library/argparse.html">Python module</a> of the same name). We will not cover this package in this lesson but when you start writing programs with multiple parameters you’ll want to read through the package’s <a href="https://cran.r-project.org/package=argparse/vignettes/argparse.html">vignette</a>.</p>
-</aside>
 </div>
+</aside>
 <div class="challenge">
 <div id="shorter-command-line-arguments" class="section level2">
 <h2>Shorter Command Line Arguments</h2>
@@ -736,8 +725,9 @@ usage &lt;- function() {
 main()</code></pre>
 </div>
 </div>
-<div id="handling-standard-input" class="section level3">
-<h3>Handling Standard Input</h3>
+</div>
+<div id="handling-standard-input" class="section level1">
+<h1>Handling Standard Input</h1>
 <p>The next thing our program has to do is read data from standard input if no filenames are given so that we can put it in a pipeline, redirect input to it, and so on. Let’s experiment in another script, which we’ll save as <code>count-stdin.R</code>:</p>
 <pre class="output"><code>lines &lt;- readLines(con = file(&quot;stdin&quot;))
 count &lt;- length(lines)
@@ -793,7 +783,6 @@ main()</code></pre>
 6.625
 6.525</code></pre>
 <p>And now we’re done: the program now does everything we set out to do.</p>
-</div>
 <div class="challenge">
 <div id="implementing-wc-in-r" class="section level2">
 <h2>Implementing <code>wc</code> in R</h2>
@@ -841,6 +830,7 @@ main()</code></pre>
 <li>Use <code>file("stdin")</code> to connect to a program’s standard input.</li>
 <li>Use <code>cat(vec, sep = " ")</code> to write the elements of <code>vec</code> to standard output, one per line.</li>
 </ul>
+</div>
 </div>
 
   </div>

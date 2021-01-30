@@ -8,7 +8,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta http-equiv="last-modified" content="2021-01-27 03:47:15 +0000">
+<meta http-equiv="last-modified" content="2021-01-30 02:41:52 +0000">
 
 
 
@@ -238,19 +238,15 @@
       <h1>Analyzing Patient Data</h1>
     </div>
 
-<div class="objectives">
-<div class="section level2">
+<div class="section level2 objectives">
 <h2>Overview</h2>
-  <div class="row">
-    <div class="col-md-3">
-  
+<div class="row">
+<div class="col-md-3">
 <p><strong>Teaching: </strong> 45<br />
 <strong>Exercises: </strong> 0</p>
-    </div>
-    <div class="col-md-9">
-  
-<p><strong>Questions</strong></p>
 </div>
+<div class="col-md-9">
+<p><strong>Questions</strong></p>
 <div id="questions" class="section level2">
 <h2>Questions</h2>
 <ul>
@@ -262,19 +258,15 @@
 <li>Where can I get help?</li>
 <li>How can I plot my data?</li>
 </ul>
-    </div>
-  </div>
-  
-  <div class="row">
-    <div class="col-md-3">
-  
-    </div>
-    <div class="col-md-9">
-  
-<p><strong>Objectives</strong></p>
 </div>
-<div id="objectives" class="section level2">
-<h2>Objectives</h2>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3">
+
+</div>
+<div class="col-md-9">
+<p><strong>Objectives</strong></p>
 <ul>
 <li>Read tabular data from a file into a program.</li>
 <li>Assign values to variables.</li>
@@ -282,9 +274,8 @@
 <li>Perform operations on a data frame of data.</li>
 <li>Display simple graphs.</li>
 </ul>
-    </div>
-  </div>
-  
+</div>
+</div>
 </div>
 <p>We are studying inflammation in patients who have been given a new treatment for arthritis, and need to analyze the first dozen data sets. The data sets are stored in <a href="reference.html#comma-separated-values-csv">comma-separated values</a> (CSV format. Each row holds the observations for just one patient. Each column holds the inflammation measured in a day, so we have a set of values in successive days. The first few rows of our first file look like this:</p>
 <pre class="output"><code>0,0,1,3,1,2,4,7,8,3,3,3,10,5,7,4,7,7,12,18,6,13,11,11,7,7,4,6,8,8,4,4,5,7,3,4,2,3,0,0
@@ -299,8 +290,8 @@
 <li>Plot the results.</li>
 </ul>
 <p>To do all that, we’ll have to learn a little bit about programming.</p>
-<div id="loading-data" class="section level3">
-<h3>Loading Data</h3>
+<div id="loading-data" class="section level1">
+<h1>Loading Data</h1>
 <p>Let’s import the file called <code>inflammation-01.csv</code> into our R environment. To import the file, first we need to tell our computer where the file is. We do that by choosing a working directory, that is, a local directory on our computer containing the files we need. This is very important in R. If we forget this step we’ll get an error message saying that the file does not exist. We can set the working directory using the function <code>setwd</code>. For this example, we change the path to our new directory at the desktop:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="kw">setwd</span>(<span class="st">&quot;~/Desktop/r-novice-inflammation/&quot;</span>)</span></code></pre></div>
 <p>Just like in the Unix Shell, we type the command and then press <kbd>Return</kbd> (or <kbd>Enter</kbd>). Also similar to the Unix Shell, we can use tab completion to make it easier to type the working directory. So while typing inside the setwd command’s quotes, we can press <kbd>Tab</kbd> to list possible directories. Alternatively we can change the working directory using the RStudio GUI using the menu option <code>Session</code> -&gt; <code>Set Working Directory</code> -&gt; <code>Choose Directory...</code></p>
@@ -309,13 +300,11 @@
 <p>The expression <code>read.csv(...)</code> is a <a href="reference.html#function-call">function call</a> that asks R to run the function <code>read.csv</code>.</p>
 <p><code>read.csv</code> has two <a href="reference.html#argument">arguments</a>: the name of the file we want to read, and whether the first line of the file contains names for the columns of data. The filename needs to be a character string (or <a href="reference.html#string">string</a> for short, so we put it in quotes. Assigning the second argument, <code>header</code>, to be <code>FALSE</code> indicates that the data file does not have column headers. We’ll talk more about the value <code>FALSE</code>, and its converse <code>TRUE</code>, in lesson 04. In case of our <code>inflammation-01.csv</code> example, R auto-generates column names in the sequence <code>V1</code> (for “variable 1”), <code>V2</code>, and so on, until <code>V40</code>.</p>
 <aside class="callout">
-</div>
-</div>
-<div id="other-options-for-reading-csv-files" class="section level2">
-<h2>Other Options for Reading CSV Files</h2>
+<div id="other-options-for-reading-csv-files" class="section level3">
+<h3>Other Options for Reading CSV Files</h3>
 <p><code>read.csv</code> actually has many more arguments that you may find useful when importing your own data in the future. You can learn more about these options in this supplementary <a href="11-supp-read-write-csv/">lesson</a>.</p>
-</aside>
 </div>
+</aside>
 <div class="challenge">
 <div id="loading-data-with-headers" class="section level2">
 <h2>Loading Data with Headers</h2>
@@ -355,9 +344,10 @@
 <pre class="output"><code>[1] 121</code></pre>
 <p><img src="fig/arithmetic-variables.svg" alt="Variables as Tags" /></p>
 <aside class="callout">
-<div id="commenting" class="section level2">
-<h2>Commenting</h2>
+<div id="commenting" class="section level3">
+<h3>Commenting</h3>
 <p>We can add comments to our code using the <code>#</code> character. It is useful to document our code in this way so that others (and us the next time we read it) have an easier time following what the code is doing.</p>
+</div>
 </aside>
 <p>We can also change a variable’s value by assigning it a new value:</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true"></a>weight_kg &lt;-<span class="st"> </span><span class="fl">57.5</span></span>
@@ -365,10 +355,10 @@
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true"></a>weight_kg</span></code></pre></div>
 <pre class="output"><code>[1] 57.5</code></pre>
 <aside class="callout">
-</div>
-<div id="variable-naming-conventions" class="section level2">
-<h2>Variable Naming Conventions</h2>
+<div id="variable-naming-conventions" class="section level3">
+<h3>Variable Naming Conventions</h3>
 <p>Historically, R programmers have used a variety of conventions for naming variables. The <code>.</code> character in R can be a valid part of a variable name; thus the above assignment could have easily been <code>weight.kg &lt;- 57.5</code>. This is often confusing to R newcomers who have programmed in languages where <code>.</code> has a more significant meaning. Today, most R programmers 1) start variable names with lower case letters, 2) separate words in variable names with underscores, and 3) use only lowercase letters, underscores, and numbers in variable names. The book <em>R Packages</em> includes a <a href="http://r-pkgs.had.co.nz/style.html">chapter</a> on this and other style considerations.</p>
+</div>
 </aside>
 <p><img src="fig/reassign-variables.svg" alt="Reassigning Variables" /></p>
 <p>Assigning a new value to a variable breaks the connection with the old value; R forgets that number and applies the variable name to the new value.</p>
@@ -394,10 +384,10 @@
 <p><img src="fig/memory-variables.svg" alt="Updating a Variable" /></p>
 <p>Since <code>weight_lb</code> doesn’t “remember” where its value came from, it isn’t automatically updated when <code>weight_kg</code> changes. This is different from the way spreadsheets work.</p>
 <aside class="callout">
-</div>
-<div id="printing-with-parentheses" class="section level2">
-<h2>Printing with Parentheses</h2>
+<div id="printing-with-parentheses" class="section level3">
+<h3>Printing with Parentheses</h3>
 <p>An alternative way to print the value of a variable is to use <code>(</code> parentheses <code>)</code> around the assignment statement. As an example: <code>(total_weight &lt;- weight_kg*2.2 + weight_lb)</code> adds the values of <code>weight_kg*2.2</code> and <code>weight_lb</code>, assigns the result to the <code>total_weight</code>, and finally prints the assigned value of the variable <code>total_weight</code>.</p>
+</div>
 </aside>
 <p>Now that we know how to assign things to variables, let’s re-run <code>read.csv</code> and save its result into a variable called ‘dat’:</p>
 <div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true"></a>dat &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="dt">file =</span> <span class="st">&quot;data/inflammation-01.csv&quot;</span>, <span class="dt">header =</span> <span class="ot">FALSE</span>)</span></code></pre></div>
@@ -417,7 +407,6 @@
 4   4   4   7   6  15   6   4   9  11   3   5   6   3   3   4   2   3   2   1
 5  14   9   7  13   9  12   6   7   7   9   6   3   2   2   4   2   0   1   1
 6   5  18   9   5   3  10   3  12   7   8   4   7   3   5   4   4   3   2   1</code></pre>
-</div>
 <div class="challenge">
 <div id="assigning-values-to-variables" class="section level2">
 <h2>Assigning Values to Variables</h2>
@@ -437,8 +426,9 @@
 <p><img src="fig/mass-age-assign-2.svg" alt="Assigning Variables" /></p>
 </div>
 </div>
-<div id="manipulating-data" class="section level3">
-<h3>Manipulating Data</h3>
+</div>
+<div id="manipulating-data" class="section level1">
+<h1>Manipulating Data</h1>
 <p>Now that our data are loaded into R, we can start doing things with them. First, let’s ask what type of thing <code>dat</code> is:</p>
 <div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true"></a><span class="kw">class</span>(dat)</span></code></pre></div>
 <pre class="output"><code>[1] &quot;data.frame&quot;</code></pre>
@@ -553,10 +543,10 @@
 60   9  14  11</code></pre>
 <p>If you leave both index values empty (i.e., <code>dat[,]</code>), you get the entire data frame.</p>
 <aside class="callout">
-</div>
-<div id="addressing-columns-by-name" class="section level2">
-<h2>Addressing Columns by Name</h2>
+<div id="addressing-columns-by-name" class="section level3">
+<h3>Addressing Columns by Name</h3>
 <p>Columns can also be addressed by name, with either the <code>$</code> operator (ie. <code>dat$V16</code>) or square brackets (ie. <code>dat[, 'V16']</code>). You can learn more about subsetting by column name in this supplementary <a href="10-supp-addressing-data/">lesson</a>.</p>
+</div>
 </aside>
 <p>Now let’s perform some common mathematical operations to learn more about our inflammation data. When analyzing data we often want to look at partial statistics, such as the maximum value per patient or the average value per day. One way to do this is to select the data we want to create a new temporary data frame, and then perform the calculation on this subset:</p>
 <div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true"></a><span class="co"># first row, all of the columns</span></span>
@@ -617,10 +607,10 @@
 <span id="cb60-2"><a href="#cb60-2" aria-hidden="true"></a><span class="kw">sd</span>(dat[, <span class="dv">7</span>])</span></code></pre></div>
 <pre class="output"><code>[1] 1.725187</code></pre>
 <aside class="callout">
-</div>
-<div id="forcing-conversion" class="section level2">
-<h2>Forcing Conversion</h2>
+<div id="forcing-conversion" class="section level3">
+<h3>Forcing Conversion</h3>
 <p>Note that R may return an error when you attempt to perform similar calculations on subsetted <em>rows</em> of data frames. This is because some functions in R automatically convert the object type to a numeric vector, while others do not (e.g. <code>max(dat[1, ])</code> works as expected, while <code>mean(dat[1, ])</code> returns <code>NA</code> and a warning). You get the expected output by including an explicit call to <code>as.numeric()</code>, e.g. <code>mean(as.numeric(dat[1, ]))</code>. By contrast, calculations on subsetted <em>columns</em> always work as expected, since columns of data frames are already defined as vectors.</p>
+</div>
 </aside>
 <p>R also has a function that summaries the previous common calculations:</p>
 <div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true"></a><span class="co"># Summarize function</span></span>
@@ -637,10 +627,10 @@
 <p><img src="fig/r-operations-across-margins.svg" alt="Operations Across Margins" /></p>
 <p>To support this, we can use the <code>apply</code> function.</p>
 <aside class="callout">
-</div>
-<div id="getting-help" class="section level2">
-<h2>Getting Help</h2>
+<div id="getting-help" class="section level3">
+<h3>Getting Help</h3>
 <p>To learn about a function in R, e.g. <code>apply</code>, we can read its help documention by running <code>help(apply)</code> or <code>?apply</code>.</p>
+</div>
 </aside>
 <p><code>apply</code> allows us to repeat a function on all of the rows (<code>MARGIN = 1</code>) or columns (<code>MARGIN = 2</code>) of a data frame.</p>
 <p>Thus, to obtain the average inflammation of each patient we will need to calculate the mean of all of the rows (<code>MARGIN = 1</code>) of the data frame.</p>
@@ -649,12 +639,11 @@
 <div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true"></a>avg_day_inflammation &lt;-<span class="st"> </span><span class="kw">apply</span>(dat, <span class="dv">2</span>, mean)</span></code></pre></div>
 <p>Since the second argument to <code>apply</code> is <code>MARGIN</code>, the above command is equivalent to <code>apply(dat, MARGIN = 2, mean)</code>. We’ll learn why this is so in the next lesson.</p>
 <aside class="callout">
-</div>
-<div id="efficient-alternatives" class="section level2">
-<h2>Efficient Alternatives</h2>
+<div id="efficient-alternatives" class="section level3">
+<h3>Efficient Alternatives</h3>
 <p>Some common operations have more efficient alternatives. For example, you can calculate the row-wise or column-wise means with <code>rowMeans</code> and <code>colMeans</code>, respectively.</p>
-</aside>
 </div>
+</aside>
 <div class="challenge">
 <div id="subsetting-data" class="section level2">
 <h2>Subsetting Data</h2>
@@ -741,8 +730,9 @@
 <span id="cb71-6"><a href="#cb71-6" aria-hidden="true"></a><span class="kw">apply</span>(dat[, <span class="kw">seq</span>(<span class="dv">1</span>, <span class="dv">40</span>, <span class="dt">by =</span> <span class="dv">2</span>)], <span class="dv">2</span>, mean)</span></code></pre></div>
 </div>
 </div>
-<div id="plotting" class="section level3">
-<h3>Plotting</h3>
+</div>
+<div id="plotting" class="section level1">
+<h1>Plotting</h1>
 <p>The mathematician Richard Hamming once said, “The purpose of computing is insight, not numbers,” and the best way to develop insight is often to visualize data. Visualization deserves an entire lecture (or course) of its own, but we can explore a few of R’s plotting features.</p>
 <p>Let’s take a look at the average inflammation over time. Recall that we already calculated these values above using <code>apply(dat, 2, mean)</code> and saved them in the variable <code>avg_day_inflammation</code>. Plotting the values is done with the function <code>plot</code>.</p>
 <div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true"></a><span class="kw">plot</span>(avg_day_inflammation)</span></code></pre></div>
@@ -755,7 +745,6 @@
 <span id="cb74-2"><a href="#cb74-2" aria-hidden="true"></a><span class="kw">plot</span>(min_day_inflammation)</span></code></pre></div>
 <p><img src="fig/01-starting-with-data-rendered-plot-min-inflammation-1.png" title="plot of chunk plot-min-inflammation" alt="plot of chunk plot-min-inflammation" style="display: block; margin: auto;" /></p>
 <p>The maximum value rises and falls perfectly smoothly, while the minimum seems to be a step function. Neither result seems particularly likely, so either there’s a mistake in our calculations or something is wrong with our data.</p>
-</div>
 <div class="challenge">
 <div id="plotting-data" class="section level2">
 <h2>Plotting Data</h2>
@@ -782,6 +771,7 @@
 <li>Use <code>apply</code> to calculate statistics across the rows or columns of a data frame.</li>
 <li>Use <code>plot</code> to create simple visualizations.</li>
 </ul>
+</div>
 </div>
 
   </div>

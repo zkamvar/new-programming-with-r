@@ -8,7 +8,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta http-equiv="last-modified" content="2021-01-27 03:47:15 +0000">
+<meta http-equiv="last-modified" content="2021-01-30 02:41:52 +0000">
 
 
 
@@ -238,19 +238,15 @@
       <h1>Dynamic Reports with knitr</h1>
     </div>
 
-<div class="objectives">
-<div class="section level2">
+<div class="section level2 objectives">
 <h2>Overview</h2>
-  <div class="row">
-    <div class="col-md-3">
-  
+<div class="row">
+<div class="col-md-3">
 <p><strong>Teaching: </strong> 20<br />
 <strong>Exercises: </strong> 0</p>
-    </div>
-    <div class="col-md-9">
-  
-<p><strong>Questions</strong></p>
 </div>
+<div class="col-md-9">
+<p><strong>Questions</strong></p>
 <div id="questions" class="section level2">
 <h2>Questions</h2>
 <ul>
@@ -258,34 +254,28 @@
 <li>How do I use <code>knitr</code>?</li>
 <li>How do I write in Markdown?</li>
 </ul>
-    </div>
-  </div>
-  
-  <div class="row">
-    <div class="col-md-3">
-  
-    </div>
-    <div class="col-md-9">
-  
-<p><strong>Objectives</strong></p>
 </div>
-<div id="objectives" class="section level2">
-<h2>Objectives</h2>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3">
+
+</div>
+<div class="col-md-9">
+<p><strong>Objectives</strong></p>
 <ul>
 <li>Understand the value of <code>knitr</code> for generating dynamic documents that include text, code, and results.</li>
 <li>Control basic formatting using markdown syntax.</li>
 <li>Be able to create, edit, and compile an .Rmd document including code chunks and inline code.</li>
 </ul>
-    </div>
-  </div>
-  
+</div>
+</div>
 </div>
 <p><code>knitr</code> is an R package that allows you to organize your notes, code, and results in a single document. It’s a great tool for “literate programming” – the idea that your code should be readable by humans as well as computers! It also keeps your writing and results together, so if you collect some new data or change how you clean the data, you just have to re-compile the document and you’re up to date!</p>
 <p>You write <code>knitr</code> documents in a simple plain text-like format called markdown, which allows you to format text using intuitive notation, so that you can focus on the content you’re writing and generating a well-formatted document when needed. In fact, you can turn your plain text (and R code and results into an HTML file or, if you have an installation of LaTeX and [Pandoc][pandoc] on your machine, a PDF, or even a Word document (if you must!.</p>
 <p>To get started, install the <code>knitr</code> package.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="kw">install.packages</span>(<span class="st">&quot;knitr&quot;</span>)</span></code></pre></div>
 <p>When you click on File -&gt; New File, there is an option for “R Markdown…”. Choose this and accept the default options in the dialog box that follows (but note that you can also create presentations this way). Save the file and click on the “Knit HTML” button at the top of the script. Compare the output to the source.</p>
-</div>
 <div id="formatting-text-in-markdown" class="section level2 challenge">
 <h2>Formatting Text in Markdown</h2>
 <p>Visit <a href="https://rmarkdown.rstudio.com/authoring_basics.html">https://rmarkdown.rstudio.com/authoring_basics.html</a> and briefly check out some of the formatting options.</p>

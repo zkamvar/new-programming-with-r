@@ -8,7 +8,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta http-equiv="last-modified" content="2021-01-27 03:47:15 +0000">
+<meta http-equiv="last-modified" content="2021-01-30 02:41:52 +0000">
 
 
 
@@ -238,19 +238,15 @@
       <h1>Creating Functions</h1>
     </div>
 
-<div class="objectives">
-<div class="section level2">
+<div class="section level2 objectives">
 <h2>Overview</h2>
-  <div class="row">
-    <div class="col-md-3">
-  
+<div class="row">
+<div class="col-md-3">
 <p><strong>Teaching: </strong> 30<br />
 <strong>Exercises: </strong> 0</p>
-    </div>
-    <div class="col-md-9">
-  
-<p><strong>Questions</strong></p>
 </div>
+<div class="col-md-9">
+<p><strong>Questions</strong></p>
 <div id="questions" class="section level2">
 <h2>Questions</h2>
 <ul>
@@ -258,19 +254,15 @@
 <li>How can I test my functions?</li>
 <li>How should I document my code?</li>
 </ul>
-    </div>
-  </div>
-  
-  <div class="row">
-    <div class="col-md-3">
-  
-    </div>
-    <div class="col-md-9">
-  
-<p><strong>Objectives</strong></p>
 </div>
-<div id="objectives" class="section level2">
-<h2>Objectives</h2>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3">
+
+</div>
+<div class="col-md-9">
+<p><strong>Objectives</strong></p>
 <ul>
 <li>Define a function that takes arguments.</li>
 <li>Return a value from a function.</li>
@@ -278,13 +270,12 @@
 <li>Set default values for function arguments.</li>
 <li>Explain why we should divide programs into small, single-purpose functions.</li>
 </ul>
-    </div>
-  </div>
-  
+</div>
+</div>
 </div>
 <p>If we only had one data set to analyze, it would probably be faster to load the file into a spreadsheet and use that to plot some simple statistics. But we have twelve files to check, and may have more in the future. In this lesson, we’ll learn how to write a function so that we can repeat several operations with a single command.</p>
-<div id="defining-a-function" class="section level3">
-<h3>Defining a Function</h3>
+<div id="defining-a-function" class="section level1">
+<h1>Defining a Function</h1>
 <p>Let’s start by defining a function <code>fahrenheit_to_celsius</code> that converts temperatures from <a href="https://en.wikipedia.org/wiki/Temperature_conversion_formulas#Fahrenheit">Fahrenheit to Celsius</a>:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a>fahrenheit_to_celsius &lt;-<span class="st"> </span><span class="cf">function</span>(temp_F) {</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a>  temp_C &lt;-<span class="st"> </span>(temp_F <span class="op">-</span><span class="st"> </span><span class="dv">32</span>) <span class="op">*</span><span class="st"> </span><span class="dv">5</span> <span class="op">/</span><span class="st"> </span><span class="dv">9</span></span>
@@ -293,11 +284,10 @@
 <p>We define <code>fahrenheit_to_celsius</code> by assigning it to the output of <code>function</code>. The list of argument names are contained within parentheses. Next, the <a href="reference.html#function-body">body</a> of the function–the statements that are executed when it runs–is contained within curly braces (<code>{}</code>). The statements in the body are indented by two spaces, which makes the code easier to read but does not affect how the code operates.</p>
 <p>When we call the function, the values we pass to it are assigned to those variables so that we can use them inside the function. Inside the function, we use a <a href="reference.html#return-statement">return statement</a> to send a result back to whoever asked for it.</p>
 <aside class="callout">
-</div>
-</div>
-<div id="automatic-returns" class="section level2">
-<h2>Automatic Returns</h2>
+<div id="automatic-returns" class="section level3">
+<h3>Automatic Returns</h3>
 <p>In R, it is not necessary to include the return statement. R automatically returns whichever variable is on the last line of the body of the function. While in the learning phase, we will explicitly define the return statement.</p>
+</div>
 </aside>
 <p>Let’s try running our function. Calling our own function is no different from calling any other function:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="co"># freezing point of water</span></span>
@@ -307,8 +297,9 @@
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a><span class="kw">fahrenheit_to_celsius</span>(<span class="dv">212</span>)</span></code></pre></div>
 <pre class="output"><code>[1] 100</code></pre>
 <p>We’ve successfully called the function that we defined, and we have access to the value that we returned.</p>
-<div id="composing-functions" class="section level3">
-<h3>Composing Functions</h3>
+</div>
+<div id="composing-functions" class="section level1">
+<h1>Composing Functions</h1>
 <p>Now that we’ve seen how to turn Fahrenheit into Celsius, it’s easy to turn Celsius into Kelvin:</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a>celsius_to_kelvin &lt;-<span class="st"> </span><span class="cf">function</span>(temp_C) {</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true"></a>  temp_K &lt;-<span class="st"> </span>temp_C <span class="op">+</span><span class="st"> </span><span class="fl">273.15</span></span>
@@ -330,16 +321,14 @@
 <pre class="output"><code>[1] 273.15</code></pre>
 <p>This is our first taste of how larger programs are built: we define basic operations, then combine them in ever-larger chunks to get the effect we want. Real-life functions will usually be larger than the ones shown here–typically half a dozen to a few dozen lines–but they shouldn’t ever be much longer than that, or the next person who reads it won’t be able to understand what’s going on.</p>
 <aside class="callout">
-</div>
-</div>
-<div id="nesting-functions" class="section level2">
-<h2>Nesting Functions</h2>
+<div id="nesting-functions" class="section level3">
+<h3>Nesting Functions</h3>
 <p>This example showed the output of <code>fahrenheit_to_celsius</code> assigned to <code>temp_C</code>, which is then passed to <code>celsius_to_kelvin</code> to get the final result. It is also possible to perform this calculation in one line of code, by “nesting” one function inside another, like so:</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true"></a><span class="co"># freezing point of water in Fahrenheit</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true"></a><span class="kw">celsius_to_kelvin</span>(<span class="kw">fahrenheit_to_celsius</span>(<span class="fl">32.0</span>))</span></code></pre></div>
 <pre class="output"><code>[1] 273.15</code></pre>
-</aside>
 </div>
+</aside>
 <div class="challenge">
 <div id="create-a-function" class="section level2">
 <h2>Create a Function</h2>
@@ -373,11 +362,11 @@
 </div>
 </div>
 <aside class="callout">
-<div id="the-call-stack" class="section level2">
-<h2>The Call Stack</h2>
+<div id="the-call-stack" class="section level3">
+<h3>The Call Stack</h3>
 <p>For a deeper understanding of how functions work, you’ll need to learn how they create their own environments and call other functions. Function calls are managed via the call stack. For more details on the call stack, have a look at the <a href="14-supp-call-stack/">supplementary material</a>.</p>
-</aside>
 </div>
+</aside>
 <div class="challenge">
 <div id="named-variables-and-the-scope-of-variables" class="section level2">
 <h2>Named Variables and the Scope of Variables</h2>
@@ -406,8 +395,9 @@
 </ol>
 </div>
 </div>
-<div id="testing-error-handling-and-documenting" class="section level3">
-<h3>Testing, Error Handling, and Documenting</h3>
+</div>
+<div id="testing-error-handling-and-documenting" class="section level1">
+<h1>Testing, Error Handling, and Documenting</h1>
 <p>Once we start putting things in functions so that we can re-use them, we need to start testing that those functions are working correctly. To see how to do this, let’s write a function to center a dataset around a particular midpoint:</p>
 <div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true"></a>center &lt;-<span class="st"> </span><span class="cf">function</span>(data, midpoint) {</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true"></a>  new_data &lt;-<span class="st"> </span>(data <span class="op">-</span><span class="st"> </span><span class="kw">mean</span>(data)) <span class="op">+</span><span class="st"> </span>midpoint</span>
@@ -458,8 +448,8 @@
 <div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true"></a><span class="kw">all.equal</span>(<span class="kw">sd</span>(dat[, <span class="dv">4</span>]), <span class="kw">sd</span>(centered))</span></code></pre></div>
 <pre class="output"><code>[1] TRUE</code></pre>
 <p>It’s still possible that our function is wrong, but it seems unlikely enough that we should probably get back to doing our analysis. However, there are two other important tasks to consider: 1 we should ensure our function can provide informative errors when needed, and 2 we should write some <a href="reference.html#documentation">documentation</a> for our function to remind ourselves later what it’s for and how to use it.</p>
-<div id="error-handling" class="section level4">
-<h4>Error Handling</h4>
+<div id="error-handling" class="section level2">
+<h2>Error Handling</h2>
 <p>What happens if we have missing data (NA values) in the <code>data</code> argument we provide to <code>center</code>?</p>
 <div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true"></a><span class="co"># new data object and set one value in column 4 to NA</span></span>
 <span id="cb46-2"><a href="#cb46-2" aria-hidden="true"></a>datNA &lt;-<span class="st"> </span>dat</span>
@@ -506,8 +496,8 @@ returning NA</code></pre>
 <p>Both of these attempts result in errors. Luckily, the errors are quite informative. In other cases, we may need to add in error handling using the <code>warning</code> and <code>stop</code> functions.</p>
 <p>For instance, the <code>center</code> function only works on numeric vectors. Recognizing this and adding warnings and errors provides feedback to the user and makes sure the output of the function is what the user wanted.</p>
 </div>
-<div id="documentation" class="section level4">
-<h4>Documentation</h4>
+<div id="documentation" class="section level2">
+<h2>Documentation</h2>
 <p>A common way to put documentation in software is to add <a href="reference.html#comment">comments</a> like this:</p>
 <div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true"></a>center &lt;-<span class="st"> </span><span class="cf">function</span>(data, midpoint) {</span>
 <span id="cb57-2"><a href="#cb57-2" aria-hidden="true"></a>  <span class="co"># return a new vector containing the original data centered around the</span></span>
@@ -517,11 +507,10 @@ returning NA</code></pre>
 <span id="cb57-6"><a href="#cb57-6" aria-hidden="true"></a>  <span class="kw">return</span>(new_data)</span>
 <span id="cb57-7"><a href="#cb57-7" aria-hidden="true"></a>}</span></code></pre></div>
 <aside class="callout">
-</div>
-</div>
-<div id="writing-documentation" class="section level2">
-<h2>Writing Documentation</h2>
+<div id="writing-documentation" class="section level3">
+<h3>Writing Documentation</h3>
 <p>Formal documentation for R functions is written in separate <code>.Rd</code> using a markup language similar to <a href="https://www.latex-project.org/">LaTeX</a>. You see the result of this documentation when you look at the help file for a given function, e.g. <code>?read.csv</code>. The <a href="https://cran.r-project.org/package=roxygen2/vignettes/rd.html">roxygen2</a> package allows R coders to write documentation alongside the function code and then process it into the appropriate <code>.Rd</code> files. You will want to switch to this more formal method of writing documentation when you start writing more complicated R projects.</p>
+</div>
 </aside>
 </div>
 <div class="challenge">
@@ -562,8 +551,9 @@ returning NA</code></pre>
 </div>
 </div>
 <p><span class="math display">\[01\]</span>: {{ page.root }}/01-starting-with-data/</p>
-<div id="defining-defaults" class="section level3">
-<h3>Defining Defaults</h3>
+</div>
+<div id="defining-defaults" class="section level1">
+<h1>Defining Defaults</h1>
 <p>We have passed arguments to functions in two ways: directly, as in <code>dim(dat)</code>, and by name, as in <code>read.csv(file = "data/inflammation-01.csv", header = FALSE)</code>. In fact, we can pass the arguments to <code>read.csv</code> without naming them:</p>
 <div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true"></a>dat &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;data/inflammation-01.csv&quot;</span>, <span class="ot">FALSE</span>)</span></code></pre></div>
 <p>However, the position of the arguments matters if they are not named.</p>
@@ -618,9 +608,8 @@ returning NA</code></pre>
 <pre class="output"><code> a  b  c 
  1  2 77 </code></pre>
 <aside class="callout">
-</div>
-<div id="matching-arguments" class="section level2">
-<h2>Matching Arguments</h2>
+<div id="matching-arguments" class="section level3">
+<h3>Matching Arguments</h3>
 <p>To be precise, R has three ways that arguments supplied by you are matched to the <em>formal arguments</em> of the function definition:</p>
 <ol style="list-style-type: decimal">
 <li>by complete name,</li>
@@ -628,6 +617,7 @@ returning NA</code></pre>
 <li>by position.</li>
 </ol>
 <p>Arguments are matched in the manner outlined above in <em>that order</em>: by complete name, then by partial matching of names, and finally by position.</p>
+</div>
 </aside>
 <p>With that in hand, let’s look at the help for <code>read.csv()</code>:</p>
 <div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true"></a>?read.csv</span></code></pre></div>
@@ -638,7 +628,6 @@ returning NA</code></pre>
 <div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true"></a>dat &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="ot">FALSE</span>, <span class="st">&quot;data/inflammation-01.csv&quot;</span>)</span></code></pre></div>
 <pre class="error"><code>Error in read.table(file = file, header = header, sep = sep, quote = quote, : &#39;file&#39; must be a character string or connection</code></pre>
 <p>It fails because <code>FALSE</code> is assigned to <code>file</code> and the filename is assigned to the argument <code>header</code>.</p>
-</div>
 <div class="challenge">
 <div id="a-function-with-default-argument-values" class="section level2">
 <h2>A Function with Default Argument Values</h2>
@@ -668,6 +657,7 @@ returning NA</code></pre>
 <li>Specify default values for arguments when defining a function using <code>name = value</code> in the argument list.</li>
 <li>Arguments can be passed by matching based on name, by position, or by omitting them (in which case the default value is used).</li>
 </ul>
+</div>
 </div>
 
   </div>

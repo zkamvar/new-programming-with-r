@@ -8,7 +8,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta http-equiv="last-modified" content="2021-01-27 03:47:15 +0000">
+<meta http-equiv="last-modified" content="2021-01-30 02:41:52 +0000">
 
 
 
@@ -238,44 +238,35 @@
       <h1>Addressing Data</h1>
     </div>
 
-<div class="objectives">
-<div class="section level2">
+<div class="section level2 objectives">
 <h2>Overview</h2>
-  <div class="row">
-    <div class="col-md-3">
-  
+<div class="row">
+<div class="col-md-3">
 <p><strong>Teaching: </strong> 20<br />
 <strong>Exercises: </strong> 0</p>
-    </div>
-    <div class="col-md-9">
-  
-<p><strong>Questions</strong></p>
 </div>
+<div class="col-md-9">
+<p><strong>Questions</strong></p>
 <div id="questions" class="section level2">
 <h2>Questions</h2>
 <ul>
 <li>What are the different methods for accessing parts of a data frame?</li>
 </ul>
-    </div>
-  </div>
-  
-  <div class="row">
-    <div class="col-md-3">
-  
-    </div>
-    <div class="col-md-9">
-  
-<p><strong>Objectives</strong></p>
 </div>
-<div id="objectives" class="section level2">
-<h2>Objectives</h2>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3">
+
+</div>
+<div class="col-md-9">
+<p><strong>Objectives</strong></p>
 <ul>
 <li>Understand the three different ways R can address data inside a data frame.</li>
 <li>Combine different methods for addressing data with the assignment operator to update subsets of data.</li>
 </ul>
-    </div>
-  </div>
-  
+</div>
+</div>
 </div>
 <p>R is a powerful language for data manipulation. There are three main ways for addressing data inside R objects.</p>
 <ul>
@@ -286,10 +277,10 @@
 <p>Lets start by loading some sample data:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a>dat &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="dt">file =</span> <span class="st">&#39;data/sample.csv&#39;</span>, <span class="dt">header =</span> <span class="ot">TRUE</span>, <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)</span></code></pre></div>
 <aside class="callout">
-</div>
-<div id="interpreting-rows-as-headers" class="section level2">
-<h2>Interpreting Rows as Headers</h2>
+<div id="interpreting-rows-as-headers" class="section level3">
+<h3>Interpreting Rows as Headers</h3>
 <p>The first row of this csv file is a list of column names. We used the <em>header = TRUE</em> argument to <code>read.csv</code> so that R can interpret the file correctly. We are using the <em>stringsAsFactors = FALSE</em> argument to override the default behaviour for R. Using factors in R is covered in a separate lesson.</p>
+</div>
 </aside>
 <p>Lets take a look at this data.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="kw">class</span>(dat)</span></code></pre></div>
@@ -324,11 +315,9 @@
 5          222          228
 6          320          294</code></pre>
 <p>The data is the results of an (not real) experiment, looking at the number of aneurysms that formed in the eyes of patients who undertook 3 different treatments.</p>
-<div id="addressing-by-index" class="section level3">
-<h3>Addressing by Index</h3>
+<div id="addressing-by-index" class="section level1">
+<h1>Addressing by Index</h1>
 <p>Data can be accessed by index. We have already seen how square brackets <code>[</code> can be used to subset data (sometimes also called “slicing”). The generic format is <code>dat[row_numbers,column_numbers]</code>.</p>
-</div>
-</div>
 <div class="challenge">
 <div id="selecting-values" class="section level2">
 <h2>Selecting Values</h2>
@@ -497,18 +486,19 @@
 5 19.9      m</code></pre>
 </div>
 </div>
-<div id="addressing-by-name" class="section level3">
-<h3>Addressing by Name</h3>
+</div>
+<div id="addressing-by-name" class="section level1">
+<h1>Addressing by Name</h1>
 <p>Columns in an R data frame are named.</p>
 <div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true"></a><span class="kw">colnames</span>(dat)</span></code></pre></div>
 <pre class="output"><code>[1] &quot;ID&quot;            &quot;Gender&quot;        &quot;Group&quot;         &quot;BloodPressure&quot;
 [5] &quot;Age&quot;           &quot;Aneurisms_q1&quot;  &quot;Aneurisms_q2&quot;  &quot;Aneurisms_q3&quot; 
 [9] &quot;Aneurisms_q4&quot; </code></pre>
 <aside class="callout">
-</div>
-<div id="default-names" class="section level2">
-<h2>Default Names</h2>
+<div id="default-names" class="section level3">
+<h3>Default Names</h3>
 <p>If column names are not specified e.g. using <code>headers = FALSE</code> in a <code>read.csv()</code> function, R assigns default names <code>V1, V2, ..., Vn</code></p>
+</div>
 </aside>
 <p>We usually use the <code>$</code> operator to address a column by name</p>
 <div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true"></a>dat<span class="op">$</span>Gender</span></code></pre></div>
@@ -533,10 +523,10 @@
 5 19.9      m
 6 14.3      M</code></pre>
 <aside class="callout">
-</div>
-<div id="best-practice" class="section level2">
-<h2>Best Practice</h2>
+<div id="best-practice" class="section level3">
+<h3>Best Practice</h3>
 <p>Best practice is to address columns by name. Often, you will create or delete columns and the column position will change.</p>
+</div>
 </aside>
 <p><br></p>
 <p>Rows in an R data frame can also be named, and rows can also be addressed by their names. <br> By default, row names are indices (i.e. position of each row in the data frame):</p>
@@ -582,17 +572,17 @@ Sub072          220          227</code></pre>
 <p>Note that row names must be <strong>unique</strong>! <br> For example, if we try and read in the data setting the <em>Group</em> column as row names, R will throw an error because values in that column are duplicated:</p>
 <div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true"></a>dat2 &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="dt">file =</span> <span class="st">&#39;data/sample.csv&#39;</span>, <span class="dt">header =</span> <span class="ot">TRUE</span>, <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>, <span class="dt">row.names=</span><span class="dv">3</span>)</span></code></pre></div>
 <pre class="error"><code>Error in read.table(file = file, header = header, sep = sep, quote = quote, : duplicate &#39;row.names&#39; are not allowed</code></pre>
-<div id="addressing-by-logical-vector" class="section level3">
-<h3>Addressing by Logical Vector</h3>
+</div>
+<div id="addressing-by-logical-vector" class="section level1">
+<h1>Addressing by Logical Vector</h1>
 <p>A logical vector contains only the special values <code>TRUE</code> and <code>FALSE</code>.</p>
 <div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true"></a><span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">FALSE</span>, <span class="ot">TRUE</span>)</span></code></pre></div>
 <pre class="output"><code>[1]  TRUE  TRUE FALSE FALSE  TRUE</code></pre>
 <aside class="callout">
-</div>
-</div>
-<div id="truth-and-its-opposite" class="section level2">
-<h2>Truth and Its Opposite</h2>
+<div id="truth-and-its-opposite" class="section level3">
+<h3>Truth and Its Opposite</h3>
 <p>Note the values <code>TRUE</code> and <code>FALSE</code> are all capital letters and are not quoted.</p>
+</div>
 </aside>
 <p>Logical vectors can be created using <code>relational operators</code> e.g. <code>&lt;, &gt;, ==, !=, %in%</code>.</p>
 <div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true"></a>x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">11</span>, <span class="dv">12</span>, <span class="dv">13</span>)</span>
@@ -608,7 +598,6 @@ Sub072          220          227</code></pre>
 <p>Often this operation is written as one line of code:</p>
 <div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true"></a><span class="kw">plot</span>(dat[dat<span class="op">$</span>Group <span class="op">==</span><span class="st"> &#39;Control&#39;</span>, ]<span class="op">$</span>BloodPressure)</span></code></pre></div>
 <p><img src="fig/10-supp-addressing-data-rendered-logical_vectors_indexing2-1.png" title="plot of chunk logical_vectors_indexing2" alt="plot of chunk logical_vectors_indexing2" style="display: block; margin: auto;" /></p>
-</div>
 <div class="challenge">
 <div id="using-logical-indexes" class="section level2">
 <h2>Using Logical Indexes</h2>
@@ -627,14 +616,14 @@ Sub072          220          227</code></pre>
 </ol>
 </div>
 </div>
-<div id="combining-addressing-and-assignment" class="section level3">
-<h3>Combining Addressing and Assignment</h3>
+</div>
+<div id="combining-addressing-and-assignment" class="section level1">
+<h1>Combining Addressing and Assignment</h1>
 <p>The assignment operator <code>&lt;-</code> can be combined with addressing.</p>
 <div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true"></a>x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">11</span>, <span class="dv">12</span>, <span class="dv">13</span>)</span>
 <span id="cb50-2"><a href="#cb50-2" aria-hidden="true"></a>x[x <span class="op">&lt;</span><span class="st"> </span><span class="dv">10</span>] &lt;-<span class="st"> </span><span class="dv">0</span></span>
 <span id="cb50-3"><a href="#cb50-3" aria-hidden="true"></a>x</span></code></pre></div>
 <pre class="output"><code>[1]  0  0  0 11 12 13</code></pre>
-</div>
 <div class="challenge">
 <div id="updating-a-subset-of-values" class="section level2">
 <h2>Updating a Subset of Values</h2>
@@ -653,6 +642,7 @@ Sub072          220          227</code></pre>
 <li>Data in data frames can be addressed by index (subsetting), by logical vector, or by name (columns only).</li>
 <li>Use the <code>$</code> operator to address a column by name.</li>
 </ul>
+</div>
 </div>
 
   </div>

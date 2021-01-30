@@ -8,7 +8,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta http-equiv="last-modified" content="2021-01-27 03:47:15 +0000">
+<meta http-equiv="last-modified" content="2021-01-30 02:41:52 +0000">
 
 
 
@@ -238,38 +238,30 @@
       <h1>Analyzing Multiple Data Sets</h1>
     </div>
 
-<div class="objectives">
-<div class="section level2">
+<div class="section level2 objectives">
 <h2>Overview</h2>
-  <div class="row">
-    <div class="col-md-3">
-  
+<div class="row">
+<div class="col-md-3">
 <p><strong>Teaching: </strong> 30<br />
 <strong>Exercises: </strong> 0</p>
-    </div>
-    <div class="col-md-9">
-  
-<p><strong>Questions</strong></p>
 </div>
+<div class="col-md-9">
+<p><strong>Questions</strong></p>
 <div id="questions" class="section level2">
 <h2>Questions</h2>
 <ul>
 <li>How can I do the same thing to multiple data sets?</li>
 <li>How do I write a <code>for</code> loop?</li>
 </ul>
-    </div>
-  </div>
-  
-  <div class="row">
-    <div class="col-md-3">
-  
-    </div>
-    <div class="col-md-9">
-  
-<p><strong>Objectives</strong></p>
 </div>
-<div id="objectives" class="section level2">
-<h2>Objectives</h2>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3">
+
+</div>
+<div class="col-md-9">
+<p><strong>Objectives</strong></p>
 <ul>
 <li>Explain what a <code>for</code> loop does.</li>
 <li>Correctly write <code>for</code> loops to repeat simple calculations.</li>
@@ -278,9 +270,8 @@
 <li>Use a function to get a list of filenames that match a simple pattern.</li>
 <li>Use a <code>for</code> loop to process multiple files.</li>
 </ul>
-    </div>
-  </div>
-  
+</div>
+</div>
 </div>
 <p>We have created a function called <code>analyze</code> that creates graphs of the minimum, average, and maximum daily inflammation rates for a single data set:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a>analyze &lt;-<span class="st"> </span><span class="cf">function</span>(filename) {</span>
@@ -301,8 +292,8 @@
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="kw">analyze</span>(<span class="st">&quot;data/inflammation-02.csv&quot;</span>)</span></code></pre></div>
 <p><img src="fig/03-loops-R-rendered-inflammation-02-1.png" title="plot of chunk inflammation-02" alt="plot of chunk inflammation-02" style="display: block; margin: auto;" /><img src="fig/03-loops-R-rendered-inflammation-02-2.png" title="plot of chunk inflammation-02" alt="plot of chunk inflammation-02" style="display: block; margin: auto;" /><img src="fig/03-loops-R-rendered-inflammation-02-3.png" title="plot of chunk inflammation-02" alt="plot of chunk inflammation-02" style="display: block; margin: auto;" /></p>
 <p>but we have a dozen data sets right now and more on the way. We want to create plots for all our data sets with a single statement. To do that, we’ll have to teach the computer how to repeat things.</p>
-<div id="for-loops" class="section level3">
-<h3>For Loops</h3>
+<div id="for-loops" class="section level1">
+<h1>For Loops</h1>
 <p>Suppose we want to print each word in a sentence. One way is to use six <code>print</code> statements:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a>best_practice &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Let&quot;</span>, <span class="st">&quot;the&quot;</span>, <span class="st">&quot;computer&quot;</span>, <span class="st">&quot;do&quot;</span>, <span class="st">&quot;the&quot;</span>, <span class="st">&quot;work&quot;</span>)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a>print_words &lt;-<span class="st"> </span><span class="cf">function</span>(sentence) {</span>
@@ -336,11 +327,10 @@
 [1] &quot;the&quot;
 [1] NA</code></pre>
 <aside class="callout">
-</div>
-</div>
-<div id="not-available" class="section level2">
-<h2>Not Available</h2>
+<div id="not-available" class="section level3">
+<h3>Not Available</h3>
 <p>R has has a special variable, <code>NA</code>, for designating missing values that are <strong>N</strong>ot <strong>A</strong>vailable in a data set. See <code>?NA</code> and <a href="https://cran.r-project.org/doc/manuals/r-release/R-intro.html#Missing-values">An Introduction to R</a> for more details.</p>
+</div>
 </aside>
 <p>Here’s a better approach:</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true"></a>print_words &lt;-<span class="st"> </span><span class="cf">function</span>(sentence) {</span>
@@ -393,7 +383,6 @@
 <div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true"></a><span class="kw">length</span>(vowels)</span></code></pre></div>
 <pre class="output"><code>[1] 5</code></pre>
 <p><code>length</code> is much faster than any R function we could write ourselves, and much easier to read than a two-line loop; it will also give us the length of many other things that we haven’t met yet, so we should always use it when we can (see this <a href="13-supp-data-structures/">lesson</a> to learn more about the different ways to store data in R.</p>
-</div>
 <div class="challenge">
 <div id="printing-numbers" class="section level2">
 <h2>Printing Numbers</h2>
@@ -457,8 +446,9 @@
 <span id="cb34-7"><a href="#cb34-7" aria-hidden="true"></a>}</span></code></pre></div>
 </div>
 </div>
-<div id="processing-multiple-files" class="section level3">
-<h3>Processing Multiple Files</h3>
+</div>
+<div id="processing-multiple-files" class="section level1">
+<h1>Processing Multiple Files</h1>
 <p>We now have almost everything we need to process all our data files. The only thing that’s missing is a function that finds files whose names match a pattern. We do not need to write it ourselves because R already has a function to do this called <code>list.files</code>.</p>
 <p>If we run the function without any arguments, <code>list.files()</code>, it returns every file in the current working directory. We can understand this result by reading the help file (<code>?list.files</code>). The first argument, <code>path</code>, is the path to the directory to be searched, and it has the default value of <code>"."</code> (recall from the <a href="https://swcarpentry.github.io/shell-novice/02-filedir/">lesson</a> on the Unix Shell that <code>"."</code> is shorthand for the current working directory). The second argument, <code>pattern</code>, is the pattern being searched, and it has the default value of <code>NULL</code>. Since no pattern is specified to filter the files, all files are returned.</p>
 <p>So to list all the csv files, we could run either of the following:</p>
@@ -475,10 +465,10 @@
  [7] &quot;inflammation-07.csv&quot; &quot;inflammation-08.csv&quot; &quot;inflammation-09.csv&quot;
 [10] &quot;inflammation-10.csv&quot; &quot;inflammation-11.csv&quot; &quot;inflammation-12.csv&quot;</code></pre>
 <aside class="callout">
-</div>
-<div id="organizing-larger-projects" class="section level2">
-<h2>Organizing Larger Projects</h2>
+<div id="organizing-larger-projects" class="section level3">
+<h3>Organizing Larger Projects</h3>
 <p>For larger projects, it is recommended to organize separate parts of the analysis into multiple subdirectories, e.g. one subdirectory for the raw data, one for the code, and one for the results like figures. We have done that here to some extent, putting all of our data files into the subdirectory “data”. For more advice on this topic, you can read <a href="http://www.ploscompbiol.org/article/info%3Adoi%2F10.1371%2Fjournal.pcbi.1000424">A quick guide to organizing computational biology projects</a> by William Stafford Noble.</p>
+</div>
 </aside>
 <p>As these examples show, <code>list.files</code> result is a vector of strings, which means we can loop over it to do something with each filename in turn. In our case, the “something” we want is our <code>analyze</code> function.</p>
 <p>Because we have put our data in a separate subdirectory, if we want to access these files using the output of <code>list.files</code> we also need to include the “path” portion of the file name. We can do that by using the argument <code>full.names = TRUE</code>.</p>
@@ -520,12 +510,11 @@
 <p><img src="fig/03-loops-R-rendered-loop-analyze-7.png" title="plot of chunk loop-analyze" alt="plot of chunk loop-analyze" style="display: block; margin: auto;" /><img src="fig/03-loops-R-rendered-loop-analyze-8.png" title="plot of chunk loop-analyze" alt="plot of chunk loop-analyze" style="display: block; margin: auto;" /><img src="fig/03-loops-R-rendered-loop-analyze-9.png" title="plot of chunk loop-analyze" alt="plot of chunk loop-analyze" style="display: block; margin: auto;" /></p>
 <p>Sure enough, the maxima of these data sets show exactly the same ramp as the first, and their minima show the same staircase structure.</p>
 <aside class="callout">
-</div>
-<div id="other-ways-to-do-it" class="section level2">
-<h2>Other Ways to Do It</h2>
+<div id="other-ways-to-do-it" class="section level3">
+<h3>Other Ways to Do It</h3>
 <p>In this lesson we saw how to use a simple <code>for</code> loop to repeat an operation. As you progress with R, you will learn that there are multiple ways to accomplish this. Sometimes the choice of one method over another is more a matter of personal style, but other times it can have consequences for the speed of your code. For instruction on best practices, see this supplementary <a href="15-supp-loops-in-depth/">lesson</a> that demonstrates how to properly repeat operations in R.</p>
-</aside>
 </div>
+</aside>
 <div class="challenge">
 <div id="using-loops-to-analyze-multiple-files" class="section level2">
 <h2>Using Loops to Analyze Multiple Files</h2>
@@ -552,6 +541,7 @@
 <li>Use <code>length(thing)</code> to determine the length of something that contains other values.</li>
 <li>Use <code>list.files(path = "path", pattern = "pattern", full.names = TRUE)</code> to create a list of files whose names match a pattern.</li>
 </ul>
+</div>
 </div>
 
   </div>
