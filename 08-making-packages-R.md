@@ -1,5 +1,5 @@
 ---
-sandpaper-digest: c672c31613f21a074f287927720278e9
+sandpaper-digest: 1f86af0a7cfe3a568f28bc47b03438ed
 sandpaper-source: /Users/runner/work/new-programming-with-r/new-programming-with-r/episodes/08-making-packages-R.Rmd
 
 title: Making Packages in R
@@ -45,7 +45,7 @@ An R package requires four components:
 
 \*There are other optional components. [rOpenSci community](https://devguide.ropensci.org/building.html) has written a science-focused guidebook for package development, while [the "R packages" book](http://r-pkgs.had.co.nz/description.html) contains all the fundamental information.
 
-### DESCRIPTION file
+# DESCRIPTION file
 
 ```source
 Package: Package name
@@ -59,13 +59,13 @@ License: Abbreviation for an open source license
 
 The package name can only contain letters and numbers and has to start with a letter.
 
-### .R files
+# .R files
 
 Functions don't all have to be in one file or each in separate files.
 How you organize them is up to you.
 Suggestion: organize in a logical manner so that you know which file holds which functions.
 
-### Making your first R package
+# Making your first R package
 
 Let's turn our temperature conversion functions into an R package.
 

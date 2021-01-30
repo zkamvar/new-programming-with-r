@@ -1,5 +1,5 @@
 ---
-sandpaper-digest: ff7f3d446ebfd752911d9a6d0dbcc89b
+sandpaper-digest: 4a0bbaeb660b0ae290c9bfcb49be6cd4
 sandpaper-source: /Users/runner/work/new-programming-with-r/new-programming-with-r/episodes/15-supp-loops-in-depth.Rmd
 
 title: Loops in R
@@ -54,7 +54,7 @@ analyze <- function(filename) {
 filenames <- list.files(path = "data", pattern = "inflammation-[0-9]{2}.csv", full.names = TRUE)
 ```
 
-### Vectorized Operations
+# Vectorized Operations
 
 A key difference between R and many other languages is a topic known as vectorization.
 When you wrote the `total` function, we mentioned that R already has `sum` to do this; `sum` is *much* faster than the interpreted `for` loop because `sum` is coded in C to work with a vector of numbers.
@@ -98,7 +98,7 @@ all.equal(res, res2)
 [1] TRUE
 ```
 
-### Vector Recycling
+# Vector Recycling
 
 When performing vector operations in R, it is important to know about recycling. If you perform an operation on two or more vectors of unequal length, R will recycle elements of the shorter vector(s) to match the longest vector.  For example:
 
@@ -146,7 +146,7 @@ length
  [1]  2  4  6  8 10 12 14  9 11 13
 ```
 
-### `for` or `apply`?
+# `for` or `apply`?
 
 A `for` loop is used to apply the same function calls to a collection of objects.
 R has a family of functions, the `apply` family, which can be used in much the same way.
@@ -170,7 +170,7 @@ Deciding whether to use `for` or one of the `apply` family is really personal pr
 Using an `apply` family function forces to you encapsulate your operations as a function rather than separate calls with `for`.
 `for` loops are often more natural in some circumstances; for several related operations, a `for` loop will avoid you having to pass in a lot of extra arguments to your function.
 
-### Loops in R Are Slow
+# Loops in R Are Slow
 
 No, they are not! *If* you follow some golden rules:
 
@@ -201,7 +201,7 @@ system.time(avg2 <- analyze2(filenames))
 
 ```{.output}
    user  system elapsed 
-  0.037   0.003   0.040 
+  0.035   0.002   0.037 
 ```
 
 Note how we add a new column to `out` at each iteration?
@@ -227,7 +227,7 @@ system.time(avg3 <- analyze3(filenames))
 
 ```{.output}
    user  system elapsed 
-  0.035   0.002   0.037 
+  0.034   0.002   0.036 
 ```
 
 In this simple example there is little difference in the compute time of `analyze2` and `analyze3`.

@@ -1,5 +1,5 @@
 ---
-sandpaper-digest: 1a5b8233e9e76ce62fe1f5fb8006e90e
+sandpaper-digest: 3f6a99fc69e79de4adf19f15e61dad5b
 sandpaper-source: /Users/runner/work/new-programming-with-r/new-programming-with-r/episodes/01-starting-with-data.Rmd
 
 title: Analyzing Patient Data
@@ -58,7 +58,7 @@ We want to:
 
 To do all that, we'll have to learn a little bit about programming.
 
-### Loading Data
+# Loading Data
 
 Let's import the file called `inflammation-01.csv` into our R environment. To import the file, first we need to tell our computer where the file is. We do that by choosing a working directory, that is, a local directory on our computer containing the files we need. This is very important in R. If we forget this step we'll get an error message saying that the file does not exist. We can set the working directory using the function `setwd`. For this example, we change the path to our new directory at the desktop:
 
@@ -376,7 +376,7 @@ age <- age - 20
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-### Manipulating Data
+# Manipulating Data
 
 Now that our data are loaded into R, we can start doing things with them.
 First, let's ask what type of thing `dat` is:
@@ -920,7 +920,7 @@ apply(dat[, seq(1, 40, by = 2)], 2, mean)
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-### Plotting
+# Plotting
 
 The mathematician Richard Hamming once said, "The purpose of computing is insight, not numbers," and the best way to develop insight is often to visualize data.
 Visualization deserves an entire lecture (or course) of its own, but we can explore a few of R's plotting features.

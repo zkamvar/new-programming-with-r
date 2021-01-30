@@ -1,5 +1,5 @@
 ---
-sandpaper-digest: f836be80bbc3345d115821a71be3ff99
+sandpaper-digest: 232198af5db24f2897f4608493aee429
 sandpaper-source: /Users/runner/work/new-programming-with-r/new-programming-with-r/episodes/11-supp-read-write-csv.Rmd
 
 title: Reading and Writing CSV Files
@@ -35,7 +35,7 @@ and then use R's built in functionality to read and manipulate the data.
 In this short lesson, we'll learn how to read data from a .csv and write to a new .csv,
 and explore the [arguments](reference.html#argument) that allow you read and write the data correctly for your needs.
 
-### Read a .csv and Explore the Arguments
+# Read a .csv and Explore the Arguments
 
 Let's start by opening a .csv file containing information on the speeds at which cars of different colors were clocked in 45 mph zones in the four-corners states (`CarSpeeds.csv`). We will use the built in `read.csv(...)` [function call](reference.html#function-call), which reads the data in as a data frame, and assign the data frame to a variable (using `<-`) so that it is stored in R's memory. Then we will explore some of the basic arguments that can be supplied to the function.
 
@@ -78,7 +78,7 @@ working with different file types).
 
 The call above will import the data, but we have not taken advantage of several handy arguments that can be helpful in loading the data in the format we want. Let's explore some of these arguments.
 
-### The `header` Argument
+# The `header` Argument
 
 The default for `read.csv(...)` is to set the `header` argument to `TRUE`. This means that the first row of values in the .csv is set as header information (column names). If your data set does not have a header, set the `header` argument to `FALSE`:
 
@@ -107,7 +107,7 @@ carSpeeds[1, ]
 
 Clearly this is not the desired behavior for this data set, but it may be useful if you have a dataset without headers.
 
-### The `stringsAsFactors` Argument
+# The `stringsAsFactors` Argument
 
 This is perhaps the most important argument in `read.csv()`, particularly if you are working with categorical data. This is because the default behavior of R is to convert character [string](reference.html#string)s into factors, which may make it difficult to do such things as replace values. For example, let's say we find out that the data collector was color blind, and accidentally recorded green cars as being blue. In order to correct the data set, let's replace 'Blue' with 'Green' in the `$Color` column:
 
@@ -201,7 +201,7 @@ carSpeeds$Color
 
 That's better! And we can see how the data now is read as character instead of factor.
 
-### The `as.is` Argument
+# The `as.is` Argument
 
 This is an extension of the `stringsAsFactors` argument, but gives you control over individual columns. For example, if we want the colors of cars imported as strings, but we want the names of the states imported as factors, we would load the data set as:
 
@@ -295,7 +295,7 @@ carSpeeds$Color <- as.factor(carSpeeds$Color)
 
 
 
-### The `strip.white` Argument
+# The `strip.white` Argument
 
 It is not uncommon for mistakes to have been made when the data were recorded, for example a space (whitespace) may have been inserted before a data value. By default this whitespace will be kept in the R environment, such that '\\ Red' will be recognized as a different value than 'Red'. In order to avoid this type of error, use the `strip.white` argument. Let's see how this works by checking for the unique values in the `$Color` column of our dataset:
 
@@ -367,7 +367,7 @@ read.csv(
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-### Write a New .csv and Explore the Arguments
+# Write a New .csv and Explore the Arguments
 
 After altering our cars dataset by replacing 'Blue' with 'Green' in the `$Color` column, we now want to save the output. There are several arguments for the `write.csv(...)` [function call](reference.html#function-call), a few of which are particularly important for how the data are exported.  Let's explore these now.
 
@@ -383,7 +383,7 @@ If you open the file, you'll see that it has header names, because the data had 
 
 <img src="fig/01-supp-csv-with-row-nums.png" alt="csv written without row.names argument" />
 
-### The `row.names` Argument
+# The `row.names` Argument
 
 This argument allows us to set the names of the rows in the output data file. R's default for this argument is `TRUE`, and since it does not know what else to name the rows for the cars data set, it resorts to using row numbers. To correct this, we can set `row.names` to `FALSE`:
 
@@ -408,7 +408,7 @@ names for a data set without headers. If the data set already has headers
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-### The `na` Argument
+# The `na` Argument
 
 There are times when we want to specify certain values for `NA`s in the data set (e.g., we are going to pass the data to a program that only accepts -9999 as a nodata value). In this case, we want to set the `NA` value of our output file to the desired value, using the na argument. Let's see how this works:
 

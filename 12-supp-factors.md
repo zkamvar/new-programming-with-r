@@ -1,5 +1,5 @@
 ---
-sandpaper-digest: 9054f8f3e872d3b983b6656a2b103d8f
+sandpaper-digest: 4631203353d8c370cdc29a47b514cabd
 sandpaper-source: /Users/runner/work/new-programming-with-r/new-programming-with-r/episodes/12-supp-factors.Rmd
 
 title: Understanding Factors
@@ -170,7 +170,7 @@ We can order these from least intense to most intense, so let's use `ordered`.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-### Converting Factors
+# Converting Factors
 
 Converting from a factor to a number can cause problems:
 
@@ -205,7 +205,7 @@ f <- levels(f)[f]
 f <- as.numeric(f)
 ```
 
-### Using Factors
+# Using Factors
 
 Lets load our example data to see the use of factors:
 
@@ -322,7 +322,7 @@ barplot(table(dat$Group))
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-### Removing Levels from a Factor
+# Removing Levels from a Factor
 
 Some of the Gender values in our dataset have been coded incorrectly.
 Let's remove levels from this factor.

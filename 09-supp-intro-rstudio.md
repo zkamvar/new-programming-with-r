@@ -1,5 +1,5 @@
 ---
-sandpaper-digest: 339b8ed914bf9a89c50235da8c44a519
+sandpaper-digest: bb482deaa22fcbecde833a5265be483e
 sandpaper-source: /Users/runner/work/new-programming-with-r/new-programming-with-r/episodes/09-supp-intro-rstudio.Rmd
 
 title: Introduction to RStudio
@@ -37,7 +37,7 @@ Let's start by learning about our tool.
 - The best way to achieve this is to write scripts. RStudio provides an
   environment that allows you to do that.
 
-### Interacting with R
+# Interacting with R
 
 There are two main ways of interacting with R: using the console or by using
 script files (plain text files that contain your code).
@@ -69,12 +69,12 @@ a complete command. This is because you have not 'closed' a parenthesis or
 quotation. If you're in RStudio and this happens, click inside the console
 window and press <kbd>Esc</kbd>; this should help you out of trouble.
 
-### Commenting
+# Commenting
 
 Use `#` signs to comment. Comment liberally in your R scripts. Anything to the
 right of a `#` is ignored by R.
 
-### Assignment Operator
+# Assignment Operator
 
 `<-` is the assignment operator. It assigns values on the right to objects on
 the left. So, after executing `x <- 3`, the value of `x` is `3`. The arrow can

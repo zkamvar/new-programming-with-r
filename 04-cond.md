@@ -1,5 +1,5 @@
 ---
-sandpaper-digest: 59dfae595ed6b7ea1029734962a3188f
+sandpaper-digest: f4117256b5949c08788b3fad67dfcd25
 sandpaper-source: /Users/runner/work/new-programming-with-r/new-programming-with-r/episodes/04-cond.Rmd
 
 title: Making Choices
@@ -34,7 +34,7 @@ Our previous lessons have shown us how to manipulate data, define our own functi
 However, the programs we have written so far always do the same things, regardless of what data they're given.
 We want programs to make choices based on the values they are manipulating.
 
-### Saving Plots to a File
+# Saving Plots to a File
 
 So far, we have built a function `analyze` to plot summary statistics of the inflammation data:
 
@@ -102,7 +102,7 @@ We can update the `analyze` function so that it always saves the plots in a pdf.
 But that would make it more difficult to interactively test out new changes.
 It would be ideal if `analyze` would either save or not save the plots based on its input.
 
-### Conditionals
+# Conditionals
 
 In order to update our function to decide between saving or not, we need to write code that automatically decides between multiple options. The computer can make these deicisons through logical comparisons.
 
@@ -418,7 +418,7 @@ if (patient_average_inf > average_inf_max) {
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-### Saving Automatically Generated Figures
+# Saving Automatically Generated Figures
 
 Now that we know how to have R make decisions based on input values,
 let's update `analyze`:

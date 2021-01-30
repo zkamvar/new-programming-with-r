@@ -1,5 +1,5 @@
 ---
-sandpaper-digest: 2713a963761673696585550add9d4bd6
+sandpaper-digest: acd84bfdd8724bb76713601b7586fd7c
 sandpaper-source: /Users/runner/work/new-programming-with-r/new-programming-with-r/episodes/13-supp-data-structures.Rmd
 
 title: Data Types and Structures
@@ -32,7 +32,7 @@ source: Rmd
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-### Understanding Basic Data Types and Data Structures in R
+# Understanding Basic Data Types and Data Structures in R
 
 To make the best of the R language, you'll need a strong understanding of the
 basic data types and data structures and how to operate on them.
@@ -140,7 +140,7 @@ R has many **data structures**. These include
 - data frame
 - factors
 
-### Vectors
+# Vectors
 
 A vector is the most common and basic data structure in R and is pretty much the
 workhorse of R. Technically, vectors can be one of two types:
@@ -150,7 +150,7 @@ workhorse of R. Technically, vectors can be one of two types:
 
 although the term "vector" most commonly refers to the atomic types not to lists.
 
-### The Different Vector Modes
+# The Different Vector Modes
 
 A vector is a collection of elements that are most commonly of mode `character`,
 `logical`, `integer` or `numeric`.
@@ -232,7 +232,7 @@ While using quoted text will create a vector of mode `character`:
 z <- c("Sarah", "Tracy", "Jon")
 ```
 
-### Examining Vectors
+# Examining Vectors
 
 The functions `typeof()`, `length()`, `class()` and `str()` provide useful
 information about your vectors and R objects in general.
@@ -270,7 +270,7 @@ str(z)
  chr [1:3] "Sarah" "Tracy" "Jon"
 ```
 
-### Adding Elements
+# Adding Elements
 
 The function `c()` (for combine) can also be used to add elements to a vector.
 
@@ -293,7 +293,7 @@ z
 [1] "Greg"    "Sarah"   "Tracy"   "Jon"     "Annette"
 ```
 
-### Vectors from a Sequence of Numbers
+# Vectors from a Sequence of Numbers
 
 You can create vectors as a sequence of numbers.
 
@@ -321,7 +321,7 @@ seq(from = 1, to = 10, by = 0.1)
 [91] 10.0
 ```
 
-### Missing Data
+# Missing Data
 
 R supports missing data in vectors. They are represented as `NA` (Not Available)
 and can be used for all the vector types covered in this lesson:
@@ -373,7 +373,7 @@ anyNA(y)
 [1] FALSE
 ```
 
-### Other Special Values
+# Other Special Values
 
 `Inf` is infinity. You can have either positive or negative infinity.
 
@@ -397,7 +397,7 @@ anyNA(y)
 [1] NaN
 ```
 
-### What Happens When You Mix Types Inside a Vector?
+# What Happens When You Mix Types Inside a Vector?
 
 R will create a resulting vector with a mode that can most easily accommodate
 all the elements it contains. This conversion between modes of storage is called
@@ -450,7 +450,7 @@ All vectors are one-dimensional and each element is of the same type.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-### Objects Attributes
+# Objects Attributes
 
 Objects can have **attributes**. Attributes are part of the object. These include:
 
@@ -480,7 +480,7 @@ nchar("Software Carpentry")
 [1] 18
 ```
 
-### Matrix
+# Matrix
 
 In R matrices are an extension of the numeric or character vectors. They are not
 a separate type of object but simply an atomic vector with dimensions; the
@@ -638,7 +638,7 @@ mdat[2, 3]
 [1] 13
 ```
 
-### List
+# List
 
 In R lists act as containers. Unlike atomic vectors, the contents of a list are
 not restricted to a single mode and can encompass any mixture of data
@@ -792,7 +792,7 @@ Elements are indexed by double brackets. Single brackets will still return
 a(nother) list. If the elements of a list are named, they can be referenced by
 the `$` notation (i.e. `xlist$data`).
 
-### Data Frame
+# Data Frame
 
 A data frame is a very important data type in R. It's pretty much the *de facto*
 data structure for most tabular data and what we use for statistics.
@@ -812,7 +812,7 @@ Some additional information on data frames:
 - Find the number of rows and columns with `nrow(dat)` and `ncol(dat)`, respectively.
 - Rownames are often automatically generated and look like 1, 2, ..., n. Consistency in numbering of rownames may not be honored when rows are reshuffled or subset.
 
-### Creating Data Frames by Hand
+# Creating Data Frames by Hand
 
 To create data frames by hand:
 

@@ -1,5 +1,5 @@
 ---
-sandpaper-digest: 34471fac77bec09a3c82e2b60f54a635
+sandpaper-digest: 565939c10d60a9161ef0b323b85c0b55
 sandpaper-source: /Users/runner/work/new-programming-with-r/new-programming-with-r/episodes/05-cmdline.Rmd
 
 title: Command-Line Programs
@@ -65,7 +65,7 @@ Our overall requirements are:
 To make this work, we need to know how to handle command-line arguments in a program, and how to get at standard input.
 We'll tackle these questions in turn below.
 
-### Command-Line Arguments
+# Command-Line Arguments
 
 Using the text editor of your choice, save the following line of code in a text file called `session-info.R`:
 
@@ -444,7 +444,7 @@ main()
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-### Handling Multiple Files
+# Handling Multiple Files
 
 The next step is to teach our program how to handle multiple files.
 Since 60 lines of output per file is a lot to page through, we'll start by using three smaller files, each of which has three days of data for two patients.
@@ -573,7 +573,7 @@ main()
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-### Handling Command-Line Flags
+# Handling Command-Line Flags
 
 The next step is to teach our program to pay attention to the `--min`, `--mean`, and `--max` flags.
 These always appear before the names of the files, so let's save the following in `readings-04.R`:
@@ -760,7 +760,7 @@ main()
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-### Handling Standard Input
+# Handling Standard Input
 
 The next thing our program has to do is read data from standard input if no filenames are given so that we can put it in a pipeline, redirect input to it, and so on.
 Let's experiment in another script, which we'll save as `count-stdin.R`:

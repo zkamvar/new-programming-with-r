@@ -1,5 +1,5 @@
 ---
-sandpaper-digest: 525bc383f375b2d945ff3a9eb1364b9a
+sandpaper-digest: 277dd674e64d8a44343ac77563aa83b9
 sandpaper-source: /Users/runner/work/new-programming-with-r/new-programming-with-r/episodes/14-supp-call-stack.Rmd
 
 title: The Call Stack
@@ -29,7 +29,7 @@ source: Rmd
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-### The Call Stack
+# The Call Stack
 
 Let's take a closer look at what happens when we call `fahrenheit_to_kelvin(32)`.
 To make things clearer,

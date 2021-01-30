@@ -1,5 +1,5 @@
 ---
-sandpaper-digest: 7e4f1e1d13acceedf8c0532e5e6766a9
+sandpaper-digest: fd05181a6094ccea5007378dd0db3be1
 sandpaper-source: /Users/runner/work/new-programming-with-r/new-programming-with-r/episodes/03-loops-R.Rmd
 
 title: Analyzing Multiple Data Sets
@@ -66,7 +66,7 @@ but we have a dozen data sets right now and more on the way.
 We want to create plots for all our data sets with a single statement.
 To do that, we'll have to teach the computer how to repeat things.
 
-### For Loops
+# For Loops
 
 Suppose we want to print each word in a sentence.
 One way is to use six `print` statements:
@@ -376,7 +376,7 @@ expo <- function(base, power) {
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-### Processing Multiple Files
+# Processing Multiple Files
 
 We now have almost everything we need to process all our data files.
 The only thing that's missing is a function that finds files whose names match a pattern.
