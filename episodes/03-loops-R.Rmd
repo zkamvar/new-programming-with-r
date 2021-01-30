@@ -58,7 +58,7 @@ but we have a dozen data sets right now and more on the way.
 We want to create plots for all our data sets with a single statement.
 To do that, we'll have to teach the computer how to repeat things.
 
-### For Loops
+# For Loops
 
 Suppose we want to print each word in a sentence.
 One way is to use six `print` statements:
@@ -291,7 +291,7 @@ expo <- function(base, power) {
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-### Processing Multiple Files
+# Processing Multiple Files
 
 We now have almost everything we need to process all our data files.
 The only thing that's missing is a function that finds files whose names match a pattern.

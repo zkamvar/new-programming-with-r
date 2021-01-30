@@ -27,7 +27,7 @@ source: Rmd
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-### The Call Stack
+# The Call Stack
 
 Let's take a closer look at what happens when we call `fahrenheit_to_kelvin(32)`.
 To make things clearer,

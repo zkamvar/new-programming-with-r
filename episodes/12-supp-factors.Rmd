@@ -121,7 +121,7 @@ We can order these from least intense to most intense, so let's use `ordered`.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-### Converting Factors
+# Converting Factors
 
 Converting from a factor to a number can cause problems:
 
@@ -145,7 +145,7 @@ f <- levels(f)[f]
 f <- as.numeric(f)
 ```
 
-### Using Factors
+# Using Factors
 
 Lets load our example data to see the use of factors:
 
@@ -212,7 +212,7 @@ barplot(table(dat$Group))
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-### Removing Levels from a Factor
+# Removing Levels from a Factor
 
 Some of the Gender values in our dataset have been coded incorrectly.
 Let's remove levels from this factor.

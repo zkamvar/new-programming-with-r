@@ -72,7 +72,7 @@ head(dat)
 
 The data is the results of an (not real) experiment, looking at the number of aneurysms that formed in the eyes of patients who undertook 3 different treatments.
 
-### Addressing by Index
+# Addressing by Index
 
 Data can be accessed by index. We have already seen how square brackets `[` can be used to subset data (sometimes also called "slicing"). The generic format is `dat[row_numbers,column_numbers]`.
 
@@ -169,7 +169,7 @@ dat[1:5, c(5, 2)]
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-### Addressing by Name
+# Addressing by Name
 
 Columns in an R data frame are named.
 
@@ -250,7 +250,7 @@ For example, if we try and read in the data setting the *Group* column as row na
 dat2 <- read.csv(file = 'data/sample.csv', header = TRUE, stringsAsFactors = FALSE, row.names=3)
 ```
 
-### Addressing by Logical Vector
+# Addressing by Logical Vector
 
 A logical vector contains only the special values `TRUE` and `FALSE`.
 
@@ -314,7 +314,7 @@ plot(dat[dat$Group == 'Control', ]$BloodPressure)
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-### Combining Addressing and Assignment
+# Combining Addressing and Assignment
 
 The assignment operator `<-` can be combined with addressing.
 

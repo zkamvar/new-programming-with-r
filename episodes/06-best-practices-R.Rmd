@@ -28,7 +28,7 @@ source: Rmd
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-### Keep track of who wrote your code and its intended purpose
+# Keep track of who wrote your code and its intended purpose
 
 Starting your code with an annotated description of what the code does when it is run will help you when you have to look at or change it in the future. Just one or two lines at the beginning of the file can save you or someone else a lot of time and effort when trying to understand what a particular script does.
 
@@ -37,7 +37,7 @@ Starting your code with an annotated description of what the code does when it i
 # paper. Code developed by Sarah Supp, Tracy Teal, and Jon Borelli
 ```
 
-### Be explicit about the requirements and dependencies of your code
+# Be explicit about the requirements and dependencies of your code
 
 Loading all of the packages that will be necessary to run your code (using `library`) is a nice way of indicating which packages are necessary to run your code. It can be frustrating to make it two-thirds of the way through a long-running script only to find out that a dependency hasn't been installed.
 
@@ -97,7 +97,7 @@ It is best practice to have the user running the script begin in a consistent di
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-### Identify and segregate distinct components in your code
+# Identify and segregate distinct components in your code
 
 It's easy to annotate and mark your code using `#` or `#-` to set off sections of your code and to make finding specific parts of your code easier. For example, it's often helpful when writing code to separate the function definitions. If you create only one or a few custom functions in your script, put them toward the top of your code. If you have written many functions, put them all in their own .R file and then `source` those files. `source` will define all of these functions so that your code can make use of them as needed.
 
@@ -105,7 +105,7 @@ It's easy to annotate and mark your code using `#` or `#-` to set off sections o
 source("my_genius_fxns.R")
 ```
 
-### Other ideas
+# Other ideas
 
 1. Use a consistent style within your code. For example, name all matrices something ending in `_mat`. Consistency makes code easier to read and problems easier to spot.
 
