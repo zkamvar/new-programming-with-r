@@ -8,7 +8,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta http-equiv="last-modified" content="2021-01-30 02:41:52 +0000">
+<meta http-equiv="last-modified" content="2021-02-01 18:53:58 +0000">
 
 
 
@@ -285,12 +285,15 @@
 <span id="cb2-35"><a href="#cb2-35" aria-hidden="true"></a><span class="co"># Copy README</span></span>
 <span id="cb2-36"><a href="#cb2-36" aria-hidden="true"></a>fs<span class="op">::</span><span class="kw">file_copy</span>(fs<span class="op">::</span><span class="kw">path</span>(src, <span class="st">&quot;README.md&quot;</span>), <span class="st">&quot;README.md&quot;</span>)</span>
 <span id="cb2-37"><a href="#cb2-37" aria-hidden="true"></a></span>
-<span id="cb2-38"><a href="#cb2-38" aria-hidden="true"></a><span class="co"># Copy the data file to the data folder</span></span>
-<span id="cb2-39"><a href="#cb2-39" aria-hidden="true"></a>fs<span class="op">::</span><span class="kw">dir_copy</span>(fs<span class="op">::</span><span class="kw">path</span>(src, <span class="st">&quot;_episodes_rmd/data/&quot;</span>, <span class="st">&quot;episodes/&quot;</span>))</span>
-<span id="cb2-40"><a href="#cb2-40" aria-hidden="true"></a>rscripts &lt;-<span class="st"> </span>fs<span class="op">::</span><span class="kw">dir_ls</span>(fs<span class="op">::</span><span class="kw">path</span>(src, <span class="st">&quot;r-novice-gapminder/_episodes_rmd/&quot;</span>), <span class="dt">glob =</span> <span class="st">&quot;*.R&quot;</span>) </span>
-<span id="cb2-41"><a href="#cb2-41" aria-hidden="true"></a>fs<span class="op">::</span><span class="kw">file_copy</span>(rscripts, <span class="st">&quot;episodes/&quot;</span>, <span class="dt">overwrite =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb2-42"><a href="#cb2-42" aria-hidden="true"></a>fs<span class="op">::</span><span class="kw">file_delete</span>(<span class="st">&quot;episodes/01-introduction.Rmd&quot;</span>)</span>
-<span id="cb2-43"><a href="#cb2-43" aria-hidden="true"></a>fs<span class="op">::</span><span class="kw">file_delete</span>(<span class="st">&quot;learners/Setup.md&quot;</span>)</span></code></pre></div>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true"></a><span class="co"># Copy Figures (N.B. this was one of the pain points for the Jekyll lessons: figures lived above the RMarkdown documents)</span></span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true"></a>fs<span class="op">::</span><span class="kw">file_copy</span>(fs<span class="op">::</span><span class="kw">dir_ls</span>(fs<span class="op">::</span><span class="kw">path</span>(src, <span class="st">&quot;fig&quot;</span>), <span class="dt">glob =</span> <span class="st">&quot;*svg&quot;</span>), <span class="kw">here</span>(<span class="st">&quot;episodes&quot;</span>, <span class="st">&quot;fig&quot;</span>))</span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true"></a></span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true"></a><span class="co"># Copy the data file to the data folder</span></span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true"></a>fs<span class="op">::</span><span class="kw">dir_copy</span>(fs<span class="op">::</span><span class="kw">path</span>(src, <span class="st">&quot;_episodes_rmd/data/&quot;</span>, <span class="st">&quot;episodes/&quot;</span>))</span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true"></a>rscripts &lt;-<span class="st"> </span>fs<span class="op">::</span><span class="kw">dir_ls</span>(fs<span class="op">::</span><span class="kw">path</span>(src, <span class="st">&quot;r-novice-gapminder/_episodes_rmd/&quot;</span>), <span class="dt">glob =</span> <span class="st">&quot;*.R&quot;</span>) </span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true"></a>fs<span class="op">::</span><span class="kw">file_copy</span>(rscripts, <span class="st">&quot;episodes/&quot;</span>, <span class="dt">overwrite =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true"></a>fs<span class="op">::</span><span class="kw">file_delete</span>(<span class="st">&quot;episodes/01-introduction.Rmd&quot;</span>)</span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true"></a>fs<span class="op">::</span><span class="kw">file_delete</span>(<span class="st">&quot;learners/Setup.md&quot;</span>)</span></code></pre></div>
 <p>After this was done, I added the <code>.github/</code> configuration files from https://github.com/zkamvar/testme. I then ran <code>sandpaper::build_lesson()</code> to test that it worked (there’s something going on with the formatting, but nothing need be changed on this end).</p>
 <p>I then used the following steps to update the config file</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="kw">library</span>(<span class="st">&quot;sandpaper&quot;</span>)</span>
