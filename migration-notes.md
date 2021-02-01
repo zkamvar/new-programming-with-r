@@ -1,5 +1,5 @@
 ---
-sandpaper-digest: 945dfb8eaf7b416778a9400dc106a89b
+sandpaper-digest: 643e67684be9502c8c56103b38730228
 sandpaper-source: /Users/runner/work/new-programming-with-r/new-programming-with-r/instructors/migration-notes.md
 
 title: Migrating from Jekyll to {sandpaper}
@@ -59,6 +59,9 @@ index$use_sandpaper()$write(here())
 
 # Copy README
 fs::file_copy(fs::path(src, "README.md"), "README.md")
+
+# Copy Figures (N.B. this was one of the pain points for the Jekyll lessons: figures lived above the RMarkdown documents)
+fs::file_copy(fs::dir_ls(fs::path(src, "fig"), glob = "*svg"), here("episodes", "fig"))
 
 # Copy the data file to the data folder
 fs::dir_copy(fs::path(src, "_episodes_rmd/data/", "episodes/"))
