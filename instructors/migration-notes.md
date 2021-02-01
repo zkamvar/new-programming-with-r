@@ -57,6 +57,9 @@ index$use_sandpaper()$write(here())
 # Copy README
 fs::file_copy(fs::path(src, "README.md"), "README.md")
 
+# Copy Figures (N.B. this was one of the pain points for the Jekyll lessons: figures lived above the RMarkdown documents)
+fs::file_copy(fs::dir_ls(fs::path(src, "fig"), glob = "*svg"), here("episodes", "fig"))
+
 # Copy the data file to the data folder
 fs::dir_copy(fs::path(src, "_episodes_rmd/data/", "episodes/"))
 rscripts <- fs::dir_ls(fs::path(src, "r-novice-gapminder/_episodes_rmd/"), glob = "*.R") 
