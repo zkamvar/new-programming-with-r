@@ -1,3 +1,28 @@
+New Lesson Template Test
+========================
+
+This is a test repository of the new Carpentries lesson template based completely in R! It is very much a WORK IN PROGRESS, so mind your step :smile:
+To render this lesson on your own computer, do the following:
+
+1. Do these **ONCE**:
+  - Install R: https://cloud.r-project.org/
+  - Open R and install the required packages with the following commands
+     ```r
+     install.packages(c("remotes", "usethis"))
+     remotes::install_github("carpentries/sandpaper", dependencies = TRUE)
+     ```
+  - In R, clone the repository to your Desktop with:
+     ```r
+     usethis::create_from_github("zkamvar/new-programming-with-r")
+     ```
+2. Inside the repository, run the following command to **build and display a preview of the lesson locally**:
+   ```r
+   sandpaper::build_lesson()
+   ```
+
+
+
+
 ![Build and Deploy Website](https://github.com/swcarpentry/r-novice-inflammation/workflows/Build%20and%20Deploy%20Website/badge.svg)
 [![Create a Slack Account with us](https://img.shields.io/badge/Create_Slack_Account-The_Carpentries-071159.svg)](https://swc-slack-invite.herokuapp.com/)
  [![Slack Status](https://img.shields.io/badge/Slack_Channel-swc--r--inflammation-E01563.svg)](https://swcarpentry.slack.com/messages/C9WDPCMUG)
