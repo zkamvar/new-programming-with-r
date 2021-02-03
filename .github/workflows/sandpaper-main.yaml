@@ -43,6 +43,7 @@ jobs:
       - name: Install dependencies
         run: |
           remotes::install_github('carpentries/sandpaper', dependencies = TRUE)
+          remotes::install_github('carpentries/varnish')
         shell: Rscript {0}
 
       - name: Deploy site
