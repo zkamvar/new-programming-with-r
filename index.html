@@ -8,7 +8,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta http-equiv="last-modified" content="2021-02-03 00:30:26 +0000">
+<meta http-equiv="last-modified" content="2021-02-03 00:39:16 +0000">
 
 
 
@@ -239,7 +239,23 @@
       <h1></h1>
     </div>
 
+<div id="new-lesson-template-test" class="section level1">
+<h1>New Lesson Template Test</h1>
+<p>This is a test repository of the new Carpentries lesson template based completely in R! It is very much a WORK IN PROGRESS, so mind your step :smile: To render this lesson on your own computer, do the following:</p>
+<ol style="list-style-type: decimal">
+<li>Do these <strong>ONCE</strong>:</li>
+</ol>
+<ul>
+<li>Install R: https://cloud.r-project.org/</li>
+<li>Open R and install the required packages with the following commands <code>r      install.packages(c("remotes", "usethis"))      remotes::install_github("carpentries/sandpaper", dependencies = TRUE)</code></li>
+<li>In R, clone the repository to your Desktop with: <code>r      usethis::create_from_github("zkamvar/new-programming-with-r")</code></li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li><p>Inside the repository, run the following command to <strong>build and display a preview of the lesson locally</strong>:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a>sandpaper<span class="op">::</span><span class="kw">build_lesson</span>()</span></code></pre></div></li>
+</ol>
 <p><img src="https://github.com/swcarpentry/r-novice-inflammation/workflows/Build%20and%20Deploy%20Website/badge.svg" alt="Build and Deploy Website" /> <a href="https://swc-slack-invite.herokuapp.com/"><img src="https://img.shields.io/badge/Create_Slack_Account-The_Carpentries-071159.svg" alt="Create a Slack Account with us" /></a> <a href="https://swcarpentry.slack.com/messages/C9WDPCMUG"><img src="https://img.shields.io/badge/Slack_Channel-swc--r--inflammation-E01563.svg" alt="Slack Status" /></a></p>
+</div>
 <div id="r-novice-inflammation" class="section level1">
 <h1>r-novice-inflammation</h1>
 <p><a href="https://carpentries.org/">The Carpentries</a> teach foundational coding, and data science skills to researchers worldwide. This GitHub repository generates the Software Carpentry lesson website “Introduction to R for non-programmers using inflammation data.” The <a href="https://swcarpentry.github.io/r-novice-inflammation/">lesson website can be viewed here</a>. Making changes in this GitHub repository allows us to change the content of the lesson website.</p>
