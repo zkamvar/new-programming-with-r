@@ -8,7 +8,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta http-equiv="last-modified" content="2021-02-05 02:32:34 +0000">
+<meta http-equiv="last-modified" content="2021-02-09 02:33:44 +0000">
 
 
 
@@ -294,7 +294,7 @@
 <span id="cb2-44"><a href="#cb2-44" aria-hidden="true"></a>fs<span class="op">::</span><span class="kw">file_copy</span>(rscripts, <span class="st">&quot;episodes/&quot;</span>, <span class="dt">overwrite =</span> <span class="ot">TRUE</span>)</span>
 <span id="cb2-45"><a href="#cb2-45" aria-hidden="true"></a>fs<span class="op">::</span><span class="kw">file_delete</span>(<span class="st">&quot;episodes/01-introduction.Rmd&quot;</span>)</span>
 <span id="cb2-46"><a href="#cb2-46" aria-hidden="true"></a>fs<span class="op">::</span><span class="kw">file_delete</span>(<span class="st">&quot;learners/Setup.md&quot;</span>)</span></code></pre></div>
-<p>After this was done, I added the <code>.github/</code> configuration files from https://github.com/zkamvar/testme. I then ran <code>sandpaper::build_lesson()</code> to test that it worked (there’s something going on with the formatting, but nothing need be changed on this end).</p>
+<p>After this was done, I added the <code>.github/</code> configuration files from <a href="https://github.com/zkamvar/testme" class="uri">https://github.com/zkamvar/testme</a>. I then ran <code>sandpaper::build_lesson()</code> to test that it worked (there’s something going on with the formatting, but nothing need be changed on this end).</p>
 <p>I then used the following steps to update the config file</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="kw">library</span>(<span class="st">&quot;sandpaper&quot;</span>)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a><span class="co"># set the order of the learner files</span></span>
