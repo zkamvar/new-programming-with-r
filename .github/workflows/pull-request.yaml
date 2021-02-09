@@ -44,7 +44,7 @@ jobs:
         run: |
           install.packages('remotes')
           install.packages('drat')
-          drat:::add('zkamvar')
+          drat:::add('carpentries')
           saveRDS(remotes::package_deps('sandpaper', dependencies = TRUE), ".github/depends.Rds", version = 2)
           writeLines(sprintf("R-%i.%i", getRversion()$major, getRversion()$minor), ".github/R-version")
         shell: Rscript {0}
